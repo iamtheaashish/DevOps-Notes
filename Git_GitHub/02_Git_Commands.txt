@@ -1,0 +1,29 @@
+This text document is about Git commands,
+covering various aspects of using Git for version control, including basic commands, branching, merging,
+and collaboration workflows.
+
+* Why is Git important, what problems does it solve?
+- There was a problem before Git was invented,
+- when multiple developers worked on the same codebase,
+- they faced issues with version control, conflicts, and collaboration.
+
+- For example, if two developers edited the same file simultaneously,
+- it was difficult to merge their changes without losing work.
+
+- For example, if one developer added a new feature while another fixed a bug,
+- they might overwrite each other's changes, leading to lost work and confusion.
+
+- For example, if a developer accidentally deleted a file,
+- it was hard to recover the previous version without a proper version control system.
+
+- For example, if a developer wanted to experiment with a new feature,
+- they had to create a separate copy of the codebase, which was inefficient and error-prone.
+
+- Git solves these problems by providing a distributed version control system,
+- allowing developers to work on their own copies of the codebase,
+- track changes, and collaborate effectively without losing work.
+
+`Git Commands`
+=======================
+$ dnf install git
+$ git --version
