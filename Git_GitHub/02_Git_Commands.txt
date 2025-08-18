@@ -4,7 +4,7 @@ and collaboration workflows.
 
 Why DevOps Engineers should learn Git?
 Developers have to push code to repositories like GitHub, GitLab, or Bitbucket.
-But as a DevOps Engineer, you need to push automation scripts, configuration files, and other resources to these repositories.
+But as a DevOps Engineer, you need to push yaml automation scripts, configuration files, and other resources to these repositories.
 
 * Why is Git important, what problems does it solve?
 - There was a problem before Git was invented,
@@ -34,12 +34,12 @@ But as a DevOps Engineer, you need to push automation scripts, configuration fil
 - GitHub is a web-based Source Code Management platform that provides hosting for Git repositories,
 - allowing developers to share their code, collaborate on projects, and manage issues. It has a GUI and provides additional features.
 
-`Git Commands`
+< Git Commands >
 =======================
 $ dnf install git
 $ git --version
 
-" To practice Git commands, we are following these steps: "
+` To practice Git commands, we are following these steps: `
 $ cd ~/Desktop
 $ mkdir facebookmicroservices # Suppose it is our project name 
 $ cd facebookmicroservices
@@ -57,7 +57,7 @@ $ ls -la # Lists all files in the current directory, even the hidden ones. You c
    - This is where your committed files are stored.
    - It contains the history of all changes made to the files.
 
-" To understand them let's create few files "
+` To understand them let's create few files `
 $ touch DBUtils.java
 $ touch StringUtils.java
 $ touch deploy.sh
@@ -107,7 +107,7 @@ deploy.sh (untracked)           (empty)                         (empty)
 $ git config --global user.name "iamtheaashish" # Sets the global username for Git commits.
 $ git config --global user.email "iamtheaashish@hotmail.com" # Sets the global email for Git commits.
 $ git config --global --list # Lists all global Git configurations. 
-"This is only one time setup, you don't need to do it again unless you want to change your username or email."
+< This is only one time setup, you don't need to do it again unless you want to change your username or email.>
 ================================================================================================
 $ git remote add <remote_name> <remote_url> # Adds a remote repository to your local repository.
 # The remote_name is a nickname for the remote repository, and remote_url is the URL of the remote repository.
@@ -115,7 +115,7 @@ For example:
 $ git remote add sensors https://github.com/rsa7061-org/sensors.git
 # This command adds a remote repository named "sensors" with the specified URL.
 # This command maps the remote repository to your local repository, allowing you to push and pull changes between them.
-- Sensors is alias name for the remote repository. And the URL is the location of the remote repository on GitHub.
+< Sensors is alias name for the remote repository. And the URL is the location of the remote repository on GitHub. >
 
 $ git remote -v # Lists all remote repositories associated with your local repository.
 # The -v option shows the URLs of the remote repositories along with their names.
@@ -129,7 +129,7 @@ $ git push sensors main # Pushes changes from the local main branch to the remot
 # A PAT is a secure way to authenticate with GitHub without using your password.
 # You can generate a PAT from your GitHub account settings under Developer settings > Personal access tokens.
 # As soon as you generate a PAT, you have to save it in a secure place, as you won't be able to see it again.
-- Sensors is alias name for the remote repository, And main is the name of the branch you want to push.
+< Sensors is alias name for the remote repository, And main is the name of the branch you want to push. >
 =============================================================================================
 
 "Git can only be used with GitHub, GitLab, Bitbucket or Azure DevOps repositories."
@@ -148,6 +148,11 @@ $ git push sensors main # Pushes changes from the local main branch to the remot
 - does not support branching and merging as effectively as Git. SVN is more suitable for projects with
 - a single central repository and fewer developers, as it can be more difficult to manage changes
 - and collaborate on projects with multiple developers.  
+
+< svn checkin = git push >
+< svn checkout = git clone >
+< svn commit = git commit >
+< svn update = git pull >
 
 
 
