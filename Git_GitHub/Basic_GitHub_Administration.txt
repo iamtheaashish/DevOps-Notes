@@ -12,7 +12,7 @@ and best practices for collaboration.
 * where languages like Python or Perl might be more suitable.
 * Groovy is often used in Jenkins pipelines for its seamless integration with Java.
 
-` GitHub Administration `
+` GitHub Administration ` 
 =======================
 https://github.com 
 
@@ -41,7 +41,7 @@ It uses Git for version control and provides a user-friendly interface for manag
 * GitHub is widely used for open-source projects,
 * while Azure Repos is often preferred for enterprise solutions within the Microsoft ecosystem.
 =======================
-Organization has repositories, teams, and members.
+# Organization has repositories, teams, and members.
 "We can create more than one repositories for a single project. 
  We can create more than one teams for a single project.
  We can have more than one members for a single team. "
@@ -124,3 +124,4 @@ We don't use public GitHub in our company.We use Enterprise GitHub. Which has ur
 - Participate in GitHub community discussions to learn from other users and share your experiences.
 ----------------------
 
+ 
