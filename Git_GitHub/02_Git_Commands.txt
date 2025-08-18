@@ -27,3 +27,17 @@ and collaboration workflows.
 =======================
 $ dnf install git
 $ git --version
+
+" To practice Git commands, we are following these steps: "
+$ cd ~/Desktop
+$ mkdir facebookmicroservices # Suppose it is our project name 
+$ cd facebookmicroservices
+$ git init # Creates a new Git empty local repository. A normal directory is converted into a local Git repository. Git tracks all changes in this directory.
+$ ls -la # Lists all files in the current directory, even the hidden ones. You can see the .git directory created by git init. That directory contains all the metadata for the repository.
+
+* git init creates three logical areas (you don't see them with your eyes but they exist):
+1. Working Area 
+2. Staging Area
+3. Local Repo
+
+
