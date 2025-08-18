@@ -137,7 +137,17 @@ $ git push sensors main # Pushes changes from the local main branch to the remot
 "With SVN, we have to use SVN client instead of Git."
 
 ===============================================================================================
+* Difference between Git and SVN:
+- Git is a distributed version control system, meaning each developer has a complete copy of the repository
+- on their local machine, allowing them to work offline and commit changes locally before pushing to a
+- central repository. Git tracks changes in files and allows for branching and merging, making it easier
+- to collaborate on projects with multiple developers.   
 
+- SVN (Subversion) is a centralized version control system, meaning there is a single central repository
+- that all developers access to commit changes. SVN tracks changes in files and directories, but it
+- does not support branching and merging as effectively as Git. SVN is more suitable for projects with
+- a single central repository and fewer developers, as it can be more difficult to manage changes
+- and collaborate on projects with multiple developers.  
 
 
 
