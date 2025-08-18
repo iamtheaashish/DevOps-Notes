@@ -130,6 +130,10 @@ $ git push sensors main # Pushes changes from the local main branch to the remot
 # You can generate a PAT from your GitHub account settings under Developer settings > Personal access tokens.
 # As soon as you generate a PAT, you have to save it in a secure place, as you won't be able to see it again.
 < Sensors is alias name for the remote repository, And main is the name of the branch you want to push. >
+
+$ git log # Shows the commit history of your local repository.
+# The log will display the commit hash, author, date, and commit message for each commit.
+# This command helps you track the changes made to your repository over time.
 =============================================================================================
 
 "Git can only be used with GitHub, GitLab, Bitbucket or Azure DevOps repositories."
