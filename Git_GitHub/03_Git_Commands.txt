@@ -69,6 +69,9 @@ $ git checkout <branch_name>
 # Switches to the specified branch
 * We shouldn't switch branches until we commit our changes. 
 * Why ? Because uncommitted changes will be lost if we switch branches without committing.
+$ git checkout -b <branch_name>
+# Creates and switches to a new branch
+# The new branch is created based on the current branch
 ------
 $ git merge <branch_name>
 # Merges the specified branch into the current branch
@@ -78,6 +81,8 @@ $ git merge --abort
 
 $ git diff <branch_name>
 # Shows the differences between the specified branch and the current branch
+------
+` When ever we have merge conflicts, we need to open the conflicting files and resolve the conflicts manually. `
 ------
 + IDE - Integrated Development Environment
 Popular IDEs for Java:
