@@ -64,6 +64,9 @@ $ git branch -d development
 $ git branch -m <old_branch_name> <new_branch_name>
 # Renames a branch
 
+$ git branch -d <branch_name>
+# Deletes the specified branch
+
 How to switch between branches?
 $ git checkout <branch_name>
 # Switches to the specified branch
@@ -100,3 +103,28 @@ Popular IDEs for .net:
 2. JetBrains Rider
 3. MonoDevelop
 -----
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
