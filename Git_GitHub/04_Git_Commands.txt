@@ -17,7 +17,21 @@ $ git tag
 $ git tag <tagname>
 $ git push <alias_name> tag <tagname>
 # <tagname> is the name of the tag you want to push, This command pushes the specified tag to the remote repository.
+-----
+- Stashing means temporarily saving changes that are not ready to be committed. 
+- It is done to keep the working directory clean while switching branches or pulling changes.
+- Stashed changes can be reapplied later.
+$ git stash
+# Stashes the changes in the working directory 
 
+$ git stash list
+# Lists all stashed changes
+
+$ git stash apply
+# Applies the most recent stashed changes
+
+$ git stash pop
+# Applies the most recent stashed changes and removes them from the stash   
 
 
 
