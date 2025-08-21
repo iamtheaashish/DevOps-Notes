@@ -31,7 +31,9 @@ $ git stash apply
 # Applies the most recent stashed changes
 
 $ git stash pop
-# Applies the most recent stashed changes and removes them from the stash   
+# Applies the most recent stashed changes and removes them from the stash
+
+
 
 
 
