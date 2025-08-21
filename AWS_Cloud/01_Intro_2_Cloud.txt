@@ -1,0 +1,10 @@
+These notes are related to Cloud Technology, specifically AWS for now.
+* Why should we learn AWS?
++ Fastest growing cloud platform
++ Wide range of services
++ Strong community support
++ High demand for AWS skills in the job market
++ Leader in cloud infrastructure
++ Since 2015, AWS has been the most widely adopted cloud platform
++ Very less downtime compared to competitors
+
