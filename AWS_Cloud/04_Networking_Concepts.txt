@@ -1,10 +1,10 @@
  This is continuation of 03_Networking_Concepts.txt. 
-=====
+==========
 Browser ---> Local DNS Server ---> Root DNS Server ---> TLD DNS Server ---> Name Server ---> SOA (Start of Authority) ---> Local DNS ---> Browser ---> Firewall ---> Load Balancer ---> Web Server ---> Application Server ---> Database Server
                     |                                                                                                                     ^
                     |_______________>_______________________________________________>_____________________________________________________|
 
-=====
+==========
 < PROTOCOLS >
 #https://google.com
 - Protocol://hostname:port/ 
@@ -20,31 +20,44 @@ HTTP is vulnerable to MitM attacks, while HTTPS provides a secure communication 
 While doing payment transactions, it is crucial to use HTTPS to ensure that sensitive information, such as credit card details, is transmitted securely and cannot be intercepted by malicious actors.
 If they are using HTTP, it is a red flag and you should avoid making payments on such websites.
 
+# Example: 404 Page not Found
+< These are HTTP Status Codes >
+1. 404 - Not Found
+2. 200 - OK - succes code, Page Found
+3. 500 - Internal Server Error
+4. 403 - Forbidden
+5. 301 - Moved Permanently
+6. 400 - Bad Request
+7. 401 - Unauthorized
+8. 402 - Payment Required
+9. 405 - Method Not Allowed
+10. 408 - Request Timeout
+11. 429 - Too Many Requests
+12. 511 - Network Authentication Required
+13. 418 - I'm a teapot
+14. 503 - Service Unavailable
+There are many many status codes, we don't need to remember all of them, but we should know the common ones like 404, 200, 500, 403, 301, etc.
+==========
+< TCP - Transmission Control Protocol > it is reliable
+TCP is a connection-oriented protocol, which means that a connection is established between the client and server before data is transmitted.
+TCP ensures that data is delivered in the same order in which it was sent, and it also provides error-checking mechanisms to ensure that data is not corrupted during transmission.
 
+`HTTP carries data over TCP/IP. When you type a URL in your browser`
+The browser sends an HTTP request to the server over a TCP connection.
+The server then responds with an HTTP response, which is also sent over the same TCP connection.
 
++ HTTP works in Application Layer of OSI Model, while TCP works in Transport Layer of OSI Model. +
+==========
+< UDP - User Datagram Protocol > it is unreliable
+UDP is a connectionless protocol, which means that data is sent without establishing a connection between the client and server.
+UDP does not guarantee the order of data delivery, and it also does not provide error-checking mechanisms.
 
+`DNS uses UDP for its queries. When you type a URL in your browser`
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+The browser sends a DNS query to the DNS server over a UDP connection.
+The DNS server then responds with the IP address of the requested domain, which is also sent over the same UDP connection.
+==========
+Both TCP and UDP are transport layer protocols that are used to transmit data over the internet. However, they have different characteristics and are used for different purposes.
 
 
 
