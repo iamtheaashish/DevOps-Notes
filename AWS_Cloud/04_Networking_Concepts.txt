@@ -1,0 +1,66 @@
+ This is continuation of 03_Networking_Concepts.txt. 
+=====
+Browser ---> Local DNS Server ---> Root DNS Server ---> TLD DNS Server ---> Name Server ---> SOA (Start of Authority) ---> Local DNS ---> Browser ---> Firewall ---> Load Balancer ---> Web Server ---> Application Server ---> Database Server
+                    |                                                                                                                     ^
+                    |_______________>_______________________________________________>_____________________________________________________|
+
+=====
+< PROTOCOLS >
+#https://google.com
+- Protocol://hostname:port/ 
+- HTTP= Hyper Text Transfer Protocol -  It is transfers data to and fro from website to browser, it is a protocol.
+- HTTPS = Hyper Text Transfer Protocol Secured - It is transfers data to and fro from website to browser, it is a protocol.
+- HTTP= 80 , HTTPS= 443 default ports so no need to mention, but they port numbers can be customized.
+* If application is working on some other port like 8080 so you'll have to mention it like https://aashish.com:8080 even though the default port is 443 for HTTPS.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

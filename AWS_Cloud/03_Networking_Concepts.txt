@@ -96,11 +96,8 @@ Once the data packets are allowed through the firewall, they can proceed to the 
 5. Weighted Round Robin: Similar to Round Robin, but assigns a weight to each server based on its capacity, allowing more powerful servers to handle more requests.
 
 
-
-
-
-
-
+`Load Balancer is like a traffic cop at an intersection, directing incoming requests to the appropriate server based on current traffic conditions and server availability.`
+Shaik Ashish said that Load Balancer is like a router redirecting traffic to different servers based on their current load and availability.
 
 
 
