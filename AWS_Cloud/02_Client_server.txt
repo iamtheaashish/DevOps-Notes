@@ -1,0 +1,44 @@
+`This note is about the client-server architecture, which is a fundamental model in computer networking.`
+- What is Client? - asking, request a resource
+A client is a computer or a program that accesses a service made available by a server. 
+The client initiates requests to the server, which processes those requests and returns the appropriate responses.
+Clients can be web browsers, mobile apps, or any other software that communicates with a server over a network.
+
+- What is Server? - giving, which responds to requests for resource
+A server is a computer or a program that provides services to clients. 
+It listens for incoming requests from clients, processes those requests, and sends back the appropriate responses.
+Servers can host websites, manage databases, or provide various other services over a network.
+
+* If we type google.com in the browser, the browser is the client and Google is the server.
+* If we use a mobile app to check the weather, the app is the client and the weather service is the server.
+
++ Client and Server Communication
+In a client-server architecture, communication between the client and server typically occurs over a network using a request-response model. The client sends a request to the server, and the server processes that request and sends back a response. This communication can happen over various protocols, with HTTP (Hypertext Transfer Protocol) being one of the most common for web applications.
+
+`The network consists of devices, and these devices can be classified as either clients or servers.
+Clients are the devices that request services, while servers are the devices that provide those services.`
+
+There are 3 types of Client-Server Architecture:
+1. One Tier Architecture
+   - In a one-tier architecture, the client and server are combined into a single application. 
+   - This means that the client and server components are part of the same software, often running on the same machine.
+   - Example: A desktop application that accesses a local database. We don't use it in IT.
+2. Two Tier Architecture
+    - In a two-tier architecture, the client communicates directly with the server, which typically manages both application logic and data storage.
+    - The client sends requests to the server, and the server processes those requests and interacts with the database.
+    - Used only good for testing purposes (proof of concept).
+    - Example: A desktop application that connects directly to a database server.
+3. Three Tier Architecture or N Tier Architecture (Based On Your Requirements)
+   - In a three-tier architecture, the client, server, and database are separate entities, each with its own responsibilities.
+   - The client handles the user interface, the server manages application logic, and the database stores data.
+   - Example: A web application with a client-side user interface, a server-side application logic layer, and a separate database server.
+   - This architecture provides better scalability, maintainability, and separation of concerns compared to one-tier and two-tier architectures.
+
+< Three Tier Architecture >
+Application Server: The server which has application hosted is called Application Server.
+Database Server: The server which has database installed is called Database Server.
+
+* How does both Application and Database Server communicate? 
+- Both will have IP (Internet Protocol) addresses that allow them to identify and communicate with each other over the network. 
+- IP is unique identifier for each device on the network.
+- Every server has a unique <_hostname_> that can be used to access it over the network. 
