@@ -23,17 +23,35 @@ There are 3 types of Client-Server Architecture:
    - In a one-tier architecture, the client and server are combined into a single application. 
    - This means that the client and server components are part of the same software, often running on the same machine.
    - Example: A desktop application that accesses a local database. We don't use it in IT.
+   * Advantages:
+   - This structure is quite easy to maintain and modify.
+   - The communication between the client and server in the form of request response messages is quite fast.
+   * Disadvantages:
+   - If the client nodes are increased beyond capacity in the structure, then the server is not able to handle the request overflow and performance of the system degrades.
+   - Security can be a concern, as sensitive data may be exposed if proper measures are not taken.
 2. Two Tier Architecture
     - In a two-tier architecture, the client communicates directly with the server, which typically manages both application logic and data storage.
     - The client sends requests to the server, and the server processes those requests and interacts with the database.
     - Used only good for testing purposes (proof of concept).
     - Example: A desktop application that connects directly to a database server.
+    * Advantages:
+   - This structure is quite easy to maintain and modify.
+   - The communication between the client and server in the form of request response messages is quite fast.
+   * Disadvantages:
+   - If the client nodes are increased beyond capacity in the structure, then the server is not able to handle the request overflow and performance of the system degrades.
+   - Security can be a concern, as sensitive data may be exposed if proper measures are not taken.
 3. Three Tier Architecture or N Tier Architecture (Based On Your Requirements)
    - In a three-tier architecture, the client, server, and database are separate entities, each with its own responsibilities.
    - The client handles the user interface, the server manages application logic, and the database stores data.
    - Example: A web application with a client-side user interface, a server-side application logic layer, and a separate database server.
    - This architecture provides better scalability, maintainability, and separation of concerns compared to one-tier and two-tier architectures.
-
+   * Advantages:
+   - Improved scalability, as each tier can be scaled independently.
+   - Better maintainability, as changes to one tier do not directly impact others.
+   - Enhanced security, as sensitive data can be isolated in the database tier.
+   * Disadvantages:
+   - Increased complexity due to advanced features, as there are more components to manage.
+   - Potential performance overhead due to communication between tiers.
 < Three Tier Architecture >
 Application Server: The server which has application hosted is called Application Server.
 Database Server: The server which has database installed is called Database Server.
