@@ -13,6 +13,12 @@ Browser ---> Local DNS Server ---> Root DNS Server ---> TLD DNS Server ---> Name
 - HTTP= 80 , HTTPS= 443 default ports so no need to mention, but they port numbers can be customized.
 * If application is working on some other port like 8080 so you'll have to mention it like https://aashish.com:8080 even though the default port is 443 for HTTPS.
 
+$ HTTP vs HTTPS
+HTTP is not secured. It can be hacked easily. HTTPS is secured. It uses SSL certificate to encrypt the data.
+Man in the Middle Attack (MitM) is a security breach where a third party intercepts the communication between two parties without their knowledge. 
+HTTP is vulnerable to MitM attacks, while HTTPS provides a secure communication channel that protects against such attacks.
+While doing payment transactions, it is crucial to use HTTPS to ensure that sensitive information, such as credit card details, is transmitted securely and cannot be intercepted by malicious actors.
+If they are using HTTP, it is a red flag and you should avoid making payments on such websites.
 
 
 
