@@ -53,25 +53,30 @@ This allows internal hostnames and domain resolution. ```
 11. Name Server will go to SOA (Start of Authority) record to get the authoritative DNS server for "google.com".
 # SOA has all the IP addresses in the name server. He is like a admin of google.com. All the IP addresses that belong to google.com are listed there.
 # SOA record will provide the IP address of the authoritative DNS server for "google.com".
-12. SOA will give IP address to local DNS server
+12. SOA will give IP address to Local DNS server.
+# Experience: First time when you visit a website, it may take a bit longer as the DNS resolution process occurs.
+# However, subsequent visits to the same website will be faster due to caching at various levels (browser, OS, Local DNS server).
+13. Local DNS server will give IP address to Browser.
+14. Browser will use the IP address to establish a connection with the web server hosting the website.
+# Entire hangama is to get the IP address of the domain name.
+==========
+"Now it's time to talk to Google Server in Google Company"
+Data Packets are the units of data that are transmitted over a network.
+It contains source IP, destination IP, port number(HTTPS 443, HTTP 80, SSH 22, RDP 3389), protocol details (HTTPS over here to access google.com)and the actual data being transmitted.
 
+# Hyper Text Transfer Protocol Secured (HTTPS), Hyper Text Transfer Protocol (HTTP)
+===========
+< Firewall is the one who will be stopping unauthorized access to the network or the host. >
+- It monitors incoming and outgoing traffic and decides whether to allow or block specific traffic based on security rules.
+- Firewalls can be hardware-based, software-based, or a combination of both.
+- They are essential for protecting sensitive data and maintaining the integrity of the network.
 
+Firewall will stop and ask your Data Packets:
 
+1. Are you authorized to access this network?
+2. Is the data you're transmitting safe and compliant with security policies?
+3. Are you trying to connect to a known and trusted destination?
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Based on the answers, the firewall will either allow or block the data packets.
+==========
 
