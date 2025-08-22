@@ -8,8 +8,13 @@ This number is derived from the fact that IPv6 addresses are 128-bit numbers, al
 
 + Having to look for the IP address when you want to visit
 - a webpage will take a lifetime.
-+ So we just type in the domain name we’re familiar with
++ So we just type in the domain name we're familiar with
 - and let the magical system that is the DNS to take care
 - of the rest :) 
 
+<Topics Covered In This Document>
+- DNS Lookup
+- TCP/IP
+- HTTPS/SSL/TLS
+- Server: Firewall, Load Balancer, Web Server, Application Server, Database Server
 * What happens when you type a URL in a browser and hit enter?
