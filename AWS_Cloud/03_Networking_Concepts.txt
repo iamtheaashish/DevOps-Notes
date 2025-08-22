@@ -17,4 +17,61 @@ This number is derived from the fact that IPv6 addresses are 128-bit numbers, al
 - TCP/IP
 - HTTPS/SSL/TLS
 - Server: Firewall, Load Balancer, Web Server, Application Server, Database Server
-* What happens when you type a URL in a browser and hit enter?
+
+< What happens when you type a URL (let's say google.com)in a browser and hit enter? >
+1. For each website, there is a unique IP address that identifies it. No one can remember IP addresses, 
+2. So we use domain names instead. The Domain Name System (DNS) translates these domain names into IP addresses.
+3. DNS remembers the mappings between domain names and IP addresses, allowing for quick and easy access to websites.
+4. Browser needs two things hostname/domain name and IP address to establish a connection. google.com ----> IP address
+5. Browser will talk to DNS server to resolve the domain name into an IP address. It converts hostname into IP address and IP address into hostname.
+6. First Browser will talk to local DNS server.
+```A local DNS server is usually provided by whichever system is managing your internet connection. Depending on your setup, it can come from different sources:
+
+Your Internet Service Provider (ISP)
+By default, most devices are assigned the ISP's DNS servers automatically through DHCP.
+Example: Reliance Jio, Airtel, BSNL, etc., in India provide their own DNS servers.
+
+Your Router / Home Network Gateway
+Your Wi-Fi router often acts as a local DNS forwarder.
+It doesn't resolve queries itself but forwards them to the ISP's DNS or a custom DNS you configure (like Google DNS or Cloudflare).
+Devices on the network see the router as their "local DNS server."
+
+Your Operating System / Local Machine
+Some OSes run a stub resolver or DNS caching service (e.g., systemd-resolved on Linux, DNS Client service on Windows, mDNSResponder on macOS).
+These are not full DNS servers but cache and forward queries.
+
+Custom / Enterprise Setup
+In organizations, the local DNS server is often provided by the company's internal DNS infrastructure (like Windows Active Directory DNS servers or BIND/Unbound).
+This allows internal hostnames and domain resolution. ```
+7. If the local DNS server does not have the IP address cached, Browser will talk to the rootname DNS server.
+8. Rootname DNS server will identify how your domain name ends (e.g., .com, .org, .in etc). 
+# .com is top level domain, .in is top level domain, .org is top level domain.
+# in .com itself there are millions of domains.
+9. The query is then forwarded to the appropriate TLD (TOP LEVEL DOMAIN) DNS server.
+10. In TLD DNS server, there is a 'Name Server' that will identify the domain name "google.com".
+# Name Server will identify what we are requesting for.
+11. Name Server will go to SOA (Start of Authority) record to get the authoritative DNS server for "google.com".
+# SOA has all the IP addresses in the name server. He is like a admin of google.com. All the IP addresses that belong to google.com are listed there.
+# SOA record will provide the IP address of the authoritative DNS server for "google.com".
+12. SOA will give IP address to local DNS server
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
