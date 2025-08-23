@@ -59,7 +59,6 @@ The DNS server then responds with the IP address of the requested domain, which 
 ==========
 Both TCP and UDP are transport layer protocols that are used to transmit data over the internet. However, they have different characteristics and are used for different purposes.
 
-
 Basic networking can't replace the need of understanding whole networking from Behrouz A. Forouzan's book "Data Communications and Networking with TCP/IP Protocol Suite".
 
 
