@@ -29,4 +29,4 @@ $ cd . vs cd ..
 # The command 'cd .' refers to the current directory, while 'cd ..' refers to the parent directory. 
 # '.' are environment variables/blocks that refer to the current directory, while '..' are environment variables/blocks that refer to the parent directory.
 
-
+there is more to write 
