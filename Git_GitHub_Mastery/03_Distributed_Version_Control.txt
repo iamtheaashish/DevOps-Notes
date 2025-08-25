@@ -11,11 +11,13 @@ as Engineers you should be able to justify what we do. Knowing what's going insi
 We have to become a DOCTOR DevOps engineer and not a Pharmacist DevOps engineer.
 Pharmacist DevOps Engineer will only know to fire commands without DEEPLY understanding the technology.
 ========
-Hashing is an Algorithm that need to satisy those 4 conditions, Variable Input, Fixed Output, Deterministic, Fast to compute.
+```Hashing is an Algorithm that need to satisy those 4 conditions, Variable Input, Fixed Output, Deterministic, Fast to compute.
 SHA1 is a popular hashing algorithm that produces a 160-bit hash value, typically rendered as a 40-digit hexadecimal number.
 earlier git was using MD5 but now it is using SHA1.
 SHA256 is another hashing algorithm that produces a 256-bit hash value, typically rendered as a 64-digit hexadecimal number. 
 
 Latest Git version is using SHA256.
 These keys are used to uniquely identify commits and ensure data integrity within the Git repository. 
-It increases security by making it computationally infeasible to generate the same hash from different inputs (collision resistance).
+It increases security by making it computationally infeasible to generate the same hash from different inputs (collision resistance).``` 
+========
+Git Bash is not Git. Git Bash is a program that stores environment variables and provides a command-line interface for interacting with Git repositories.
