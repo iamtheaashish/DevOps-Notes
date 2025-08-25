@@ -73,14 +73,14 @@ This technology is a key component of AWS's infrastructure, allowing it to deliv
 
 It uses 2 models: 
 - Deployment Model
-1. Public Cloud
-2. Private Cloud
-3. Hybrid Cloud
-4. Community Cloud  
+1. Public Cloud - Offered to multiple customers over the internet. Service are accessed by everyone.
+2. Private Cloud - Dedicated to a single organization, providing more control and security. Services are accessed by a single organization.
+3. Hybrid Cloud - Combines public and private clouds, allowing data and applications to be shared between them. Services are accessed by multiple organizations.
+4. Community Cloud - Shared by several organizations with similar requirements. Services are accessed by a specific community of users.
 - Service Model
-
-
-
+1. Infrastructure as a Service (IaaS) - Provides virtualized computing resources over the internet. Users can rent virtual machines, storage, and networks.
+2. Platform as a Service (PaaS) - Offers a platform for developers to build, deploy, and manage applications without worrying about the underlying infrastructure.
+3. Software as a Service (SaaS) - Delivers software applications over the internet on a subscription basis. Users can access applications via a web browser without installation.
 
 
 
