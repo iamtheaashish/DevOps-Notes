@@ -1,2 +1,96 @@
 #This note is about AWS Deployment Service Models.
 AWS has datacenters across the world, allowing for low-latency access to applications and data.
+* We moved from physical servers to virtual servers to cloud instances.
+- On top of virtual servers, we have hypervisors on which guest machines or virtual machines are installed.
+- These virtual machines can run different operating systems and applications independently.
+- Cloud providers like AWS manage the underlying infrastructure, allowing users to focus on their applications.
+- This abstraction enables scalability, flexibility, and efficient resource utilization.
+=========================================================================================
+`What is Infrastructure ?`
+
+Infrastructure refers to the underlying physical and virtual resources that support the delivery of IT services. This includes:
+
+1. **Physical Infrastructure**: The tangible components such as servers, storage devices, networking equipment, and data centers.
+
+2. **Virtual Infrastructure**: The abstracted resources created by virtualization technologies, including virtual machines, virtual networks, and storage.
+
+3. **Cloud Infrastructure**: The combination of physical and virtual resources provided by cloud service providers like AWS, enabling on-demand access to computing resources over the internet.
+
+In summary, infrastructure encompasses all the foundational elements required to build, deploy, and manage applications and services in a computing environment.    
+=======================
+AWS is infrastructure as a Service (IaaS) provider.
+- AWS has a lot of Data Centers around the world.
+- In India, AWS has data centers in cities like Mumbai and Hyderabad, providing low-latency access to applications and data for users in the region.
+- Cloud infrastructure is designed to be highly scalable, allowing businesses to easily adjust their resources based on demand.
+- AWS offers a variety of services, including computing, storage, and databases, all accessible through its cloud infrastructure.
+- Security is a top priority for AWS, with multiple layers of protection in place to safeguard customer data.
+- Cloud is present in the remote location (Data center) and can be accessed over the internet, providing flexibility and scalability for businesses.
+
+* We need network to connect to the cloud.
+=======================
+"Why they named it as CLOUD?"
+They named it cloud because it represents a vast, interconnected network of servers and resources that are accessible over the internet,
+much like how clouds in the sky are expansive and omnipresent. The term "cloud" conveys the idea of a flexible, scalable, and on-demand computing environment
+where users can access and utilize resources without needing to manage the underlying infrastructure.
+Just as clouds can change shape and size, cloud computing allows for dynamic allocation of resources based on user needs.
+
+"What is Computing?"
+Computing refers to the process of using computer technology to complete a task locally. 
+It involves the manipulation of data and the execution of algorithms to solve problems or perform specific functions locally.
+
+There are several key aspects of computing:
+1. **Hardware**: The physical components of a computer system, including the CPU, memory, storage, and input/output devices.
+
+2. **Software**: The programs and applications that run on computer hardware, enabling users to perform tasks and access information.
+
+3. **Networking**: The connections between computers and devices that allow for communication and data exchange.
+
+4. **Data**: The information processed and stored by computer systems, which can be analyzed and used to make decisions.
+In summary, computing encompasses the entire ecosystem of technology that enables the processing and management of information.
+
+"What is Cloud Computing?"
+Cloud computing is a model for delivering computing resources over the internet on an as-needed basis.
+It allows users to access and utilize a shared pool of configurable computing resources, 
+such as servers, storage, databases, networking, software, and analytics, without the need for direct management by the user.
+
+Instead of computing locally on your machine, cloud computing is simply doing computing remotely on the cloud (data center ) over the internet.
+
+Key characteristics of cloud computing include:
+1. **On-Demand Self-Service**: Users can provision computing resources automatically without requiring human intervention from the service provider.
+
+2. **Broad Network Access**: Cloud services are accessible over the internet from a variety of devices, including laptops, tablets, and smartphones.
+
+3. **Resource Pooling**: Cloud providers pool their resources to serve multiple customers, dynamically allocating and reallocating resources as needed.
+
+4. **Rapid Elasticity**: Cloud resources can be quickly scaled up or down to meet changing demand, providing flexibility for users.
+
+5. **Measured Service**: Cloud providers offer a pay-as-you-go pricing model, allowing users to pay only for the resources they consume.
+Cloud computing enables organizations to focus on their core business activities while leveraging the scalability, flexibility, and cost-effectiveness of cloud services.
+=======================
+AWS uses Xen hypervisor technology to provide virtualization for its cloud services.
+Xen is an open-source hypervisor that allows multiple operating systems to run on a single physical machine, enabling efficient resource utilization and isolation between different workloads.
+This technology is a key component of AWS's infrastructure, allowing it to deliver scalable and reliable cloud services to its customers.
+
+It uses 2 models: 
+- Deployment Model
+1. Public Cloud
+2. Private Cloud
+3. Hybrid Cloud
+4. Community Cloud  
+- Service Model
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
