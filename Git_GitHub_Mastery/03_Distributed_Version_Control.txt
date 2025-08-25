@@ -1,0 +1,21 @@
+# This note is about Distributed Version Control taught by Mohit Dharmadhikari (thanks to codebuddy/hangoutbuddy).
+# In this note, we will understand how Git actually manages everything.
+
+* Distributed means multiple machines
+- Basically Version Control is like a time tracker with a timeline. 
+--------
+What is the outcome of DevOps process? from technical perspective
+as Engineers you should be able to justify what we do. Knowing what's going inside will help us take critical decisions.
+
+`In India even a pharmacist can prescribe Loose motion medication. But only the doctor know 'WHY' there is a need of Loose Motion Medication, what wrong happened that the patient need medication.`
+We have to become a DOCTOR DevOps engineer and not a Pharmacist DevOps engineer.
+Pharmacist DevOps Engineer will only know to fire commands without DEEPLY understanding the technology.
+========
+Hashing is an Algorithm that need to satisy those 4 conditions, Variable Input, Fixed Output, Deterministic, Fast to compute.
+SHA1 is a popular hashing algorithm that produces a 160-bit hash value, typically rendered as a 40-digit hexadecimal number.
+earlier git was using MD5 but now it is using SHA1.
+SHA256 is another hashing algorithm that produces a 256-bit hash value, typically rendered as a 64-digit hexadecimal number. 
+
+Latest Git version is using SHA256.
+These keys are used to uniquely identify commits and ensure data integrity within the Git repository. 
+It increases security by making it computationally infeasible to generate the same hash from different inputs (collision resistance).
