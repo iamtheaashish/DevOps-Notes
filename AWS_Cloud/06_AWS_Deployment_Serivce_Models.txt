@@ -75,13 +75,16 @@ It uses 2 models:
 - Deployment Model
 1. Public Cloud - Offered to multiple customers over the internet. Service are accessed by everyone.
 2. Private Cloud - Dedicated to a single organization, providing more control and security. Services are accessed by a single organization.
-3. Hybrid Cloud - Combines public and private clouds, allowing data and applications to be shared between them. Services are accessed by multiple organizations.
-4. Community Cloud - Shared by several organizations with similar requirements. Services are accessed by a specific community of users.
+3. Hybrid Cloud - Combines public and private clouds, allowing data and applications to be shared between them. Services are accessed by multiple organizations.    --- It is a technique, there is no separate cloud for hybrid.
+4. Community Cloud - Same as Private Cloud but shared by several organizations with similar requirements. Services are accessed by a specific community of users.   --- It is also a technique, there is no separate cloud for community.
+
+`AWS is a public cloud provider which provides Infrastructure as a Service (IaaS).`
+
 - Service Model
 1. Infrastructure as a Service (IaaS) - Provides virtualized computing resources over the internet. Users can rent virtual machines, storage, and networks.
 2. Platform as a Service (PaaS) - Offers a platform for developers to build, deploy, and manage applications without worrying about the underlying infrastructure.
 3. Software as a Service (SaaS) - Delivers software applications over the internet on a subscription basis. Users can access applications via a web browser without installation.
-
+4. Anything as a Service (XaaS) - Refers to the delivery of any IT function or service over the internet, allowing organizations to consume resources on-demand and pay only for what they use.
 
 
 

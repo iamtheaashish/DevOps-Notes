@@ -1,0 +1,31 @@
+# This note is about AWS Service Models. Thanks to Shaik Ashish for giving me the course. Reyaz Sir is awesome.
+- Service Models:
+1. Infrastructure as a Service (IaaS) - Provides virtualized computing resources over the internet. Users can rent virtual machines, storage, and networks.
+2. Platform as a Service (PaaS) - Offers a platform for developers to build, deploy, and manage applications without worrying about the underlying infrastructure.
+3. Software as a Service (SaaS) - Delivers software applications over the internet on a subscription basis. Users can access applications via a web browser without installation.
+4. Anything as a Service (XaaS) - Refers to the delivery of any IT function or service over the internet, allowing organizations to consume resources on-demand and pay only for what they use.
+
+=====
+
+"There is a girl name Sweety and she has developed applications.
+She is asking for someone to take those applications and give her URL for accessing it over the internet.
+Three People came running to help her, IAAS, PAAS and SAAS."
+
+1. IAAS guy said, "I will give you virtual machines, storage and networks. You can deploy your applications on it and access it over the internet. 
+*                  "We have Data Center and you can rent our resources so your create your virtual machines on our hypervisor." 
+# Sweety can put her own Operating System on virtual machine that she created on resources IaaS provides. On top of that OS, she can deploy her applications. But she hadn't configured the security.
+# She got hacked. IAAS is not responsible for it, she is. Whatever is there inside the VM. it is Sweety's responsibility. AWS is only liable to resources it provides. AWS gives shared responsibility model.
+# AWS clearly tells what Sweety's responsibility and what is AWS's responsibility.
+2. PAAS guy said, "I will give you a platform to develop, run and manage your applications without worrying about the underlying infrastructure."
+# Sweety don't need to worry about operating system, network, security, or storage management. The PaaS provider takes care of all of that.
+# She doesn't have headache of managing the infrastructure. PaaS will manage everything for her. They will just give URL of her application to Sweety.
+# Sweety doesn't have control on server. Platform is managing everything. Sweety is just responsible for application and data.
+# Azure is the one which is mostly famous for PaaS. But AWS is also giving PaaS services through AWS Elastic Beanstalk and AWS Lambda. Still AWS is best known for IaaS.
+3. SAAS guy said, "I will give you ready-to-use software applications that you can access over the internet without installation."
+# Sweety doesn't have to worry about anything. She can just use the software applications provided by the SaaS provider.
+# The SaaS provider takes care of everything, including maintenance, updates, and security. Sweety doesn't even need to think about the application itself.
+# She can simply access the software through a web browser and start using it right away. Everything is managed by the SaaS provider. SaaS gives software applications on a subscription basis.
+# Sweety can't customize the software or control the underlying infrastructure. That is a plus point and also a limitation.
+
+"In this case, Sweety can leverage a PaaS provider to deploy her applications. The PaaS provider will handle the underlying infrastructure, allowing her to focus only on her application code.
+Once deployed, the PaaS provider will give her a URL to access her application over the internet."
