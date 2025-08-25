@@ -1,1 +1,0 @@
-This note is about AWS Deployment Service Models.

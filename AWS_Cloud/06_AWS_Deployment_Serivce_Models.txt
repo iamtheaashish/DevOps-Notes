@@ -1,0 +1,2 @@
+#This note is about AWS Deployment Service Models.
+AWS has datacenters across the world, allowing for low-latency access to applications and data.

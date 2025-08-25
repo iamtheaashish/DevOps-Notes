@@ -29,4 +29,9 @@ $ cd . vs cd ..
 # The command 'cd .' refers to the current directory, while 'cd ..' refers to the parent directory. 
 # '.' are environment variables/blocks that refer to the current directory, while '..' are environment variables/blocks that refer to the parent directory.
 
-there is more to write 
+/Persistence --> /ContentTracker --> /VersionControlSystem --> /DistributedVCS 
+==============================================================================
+$ mkdir git_24_08_2025; cd git_24_08_2025
+$ git hash-object
+# Output is nothing because I haven't passed any file name.
+Porcelain Commands and Plumbing Commands - Refered from a book by Scott Chacon "Pro Git"
