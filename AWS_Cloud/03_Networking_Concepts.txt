@@ -71,6 +71,10 @@ It contains source IP, destination IP, port number(HTTPS 443, HTTP 80, SSH 22, R
 - Firewalls can be hardware-based, software-based, or a combination of both.
 - They are essential for protecting sensitive data and maintaining the integrity of the network.
 
+* Firewalls types :
+1. Software Firewall: A software application that monitors and controls incoming and outgoing network traffic based on predetermined security rules. Inside the operating system.
+2. Hardware Firewall: A physical device (usually placed between the internal network and the external internet) that acts as a barrier between a trusted internal network and untrusted external networks, filtering traffic based on security rules.
+
 Firewall will stop and ask your Data Packets:
 
 1. Are you authorized to access this network?

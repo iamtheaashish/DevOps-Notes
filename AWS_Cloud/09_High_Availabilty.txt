@@ -1,0 +1,64 @@
+# This note is about High Availability in AWS. Thanks to Reyaz Sir. And Shaik Ashish for clearing my doubts.
+
+# High Availability (HA) is a crucial aspect of cloud computing that ensures a system remains operational and accessible even in the event of failures or disruptions. AWS provides various services and features to help achieve high availability for applications and workloads.
+
+# Key Concepts of High Availability in AWS:
+
+# 1. Redundancy: AWS allows you to deploy applications across multiple Availability Zones (AZs) within a region. This redundancy ensures that if one AZ experiences an outage, traffic can be automatically routed to healthy instances in other AZs.
+
+# 2. Load Balancing: AWS Elastic Load Balancing (ELB) distributes incoming application traffic across multiple targets, such as EC2 instances. This helps ensure that no single instance is overwhelmed with traffic, improving overall availability.
+
+# 3. Auto Scaling: AWS Auto Scaling automatically adjusts the number of EC2 instances in response to changing demand. This ensures that your application can handle spikes in traffic while maintaining performance and availability.
+
+# 4. Backup and Recovery: AWS offers various backup and recovery solutions, such as Amazon S3 for data storage and AWS Backup for automated backup management. These services help protect your data and ensure quick recovery in case of failures.
+
+# 5. Monitoring and Alerts: AWS provides monitoring tools like Amazon CloudWatch to track the health and performance of your resources. You can set up alerts to notify you of any issues, allowing for proactive management and quick resolution.
+
+# By leveraging these AWS services and best practices, you can design and implement highly available applications that meet the needs of your users while minimizing downtime and disruptions.
+===============
+`The period of time the service is available to us/customer is called High Availability (HA).`
+
+For example: An application is hosted on http://192.168.10.11/script.js 
+It went down, now we have a downtime.
+The period of time the application is down is called Downtime.
+
+Now engineers cloned the application to another server with a different IP address, say http://192.168.10.12/script.js.
+Application is up but it has different link. So clients have to update their bookmarks or links to point to the new URL.
+No client will be happy with this kind of service.
+
+Fate is bad, so even this server goes down. Now what?
+Again new URL will be provided.
+This time, engineers can use a DNS service to point the original URL to the new server's IP address.
+This way, clients can continue using the same URL without any changes on their end.
+------
+There should be someone who is taking the traffic and distributing it to the healthy servers.
+That guy is the /___LoadBalancer.
+
+Now clients will always use the same URL, and the Load Balancer will ensure that their requests are directed to a healthy server.
+Load Balancer will have it's own DNS name and DNS records that point to the healthy servers.
+
+- How does Load Balancer know which server is working and which server is down.
+- The Load Balancer continuously monitors the health of the registered servers using health checks.
+- If a server fails to respond or returns an error, the Load Balancer will mark it as unhealthy and stop sending traffic to it until it recovers.
+- Load Balancer does health checks every few seconds to ensure that it has up-to-date information about the status of the servers.
+- If a server becomes healthy again, the Load Balancer will start sending traffic to it once more.
+
+- FailOver: In case of a complete failure of the primary server, the Load Balancer can redirect traffic to a standby server.
+
+- If all servers go down, the Load Balancer will stop routing traffic until at least one server becomes healthy again.
+$ AutoScaling can be used to launch new instances to replace unhealthy ones and restore capacity.
+Load Balancer is responsible for failover and monitoring. 
+
+Most production load balancers (like AWS ELB, NGINX, HAProxy, F5, etc.) check the application running on the server, not just the server itself.
+# Some load balancers also check server health.
+
+# Key Concepts for High Availability:
+1. Redundancy: Have multiple servers running the same application.
+2. Monitoring: Continuously monitor the health of the servers.
+3. Failover: In case of a server failure, redirect traffic to a standby server.
+
+# Even have failovers for load balancers itself. Have monitoring for load balancers as well. Have health checks for load balancers to ensure they are functioning properly.
+
+' if there is no AutoScaling, but there is failover , is downtime possible ? yes it is. 
+$ Fault Tolerance: The ability of a system to continue operating without interruption when one or more of its components fail. No Downtime (ASG - Auto Scaling Group)
+$ ASG (Auto Scaling Group): A group of EC2 instances that can be scaled in or out based on demand.
