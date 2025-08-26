@@ -16,19 +16,25 @@ $ Possible Risks of Using CLOUD:
 5. Insecure or Incomplete Data Deletion: When data is deleted from the cloud, it may not be completely removed from all storage locations.
 - This can result in data remnants being accessible, posing a risk to sensitive information.
 
+< Elasticity aka Horizontal Scaling > Adding new new new servers.
+ Elasticity is the ability of a cloud service to automatically scale resources up or down based on demand.
+ AWS provides various services like Auto Scaling and Elastic Load Balancing to help achieve elasticity.
+ This means that during peak usage times, additional resources can be provisioned automatically, and during low usage times, resources can be scaled back down.
+ Benefits of elasticity include cost savings, improved performance, and the ability to handle varying workloads without manual intervention.
 
+ # Amazon.in has Great Indian Festival sale, more number of people will visit the website on that perticular day.
+ # AWS can automatically scale resources to handle the increased traffic during the sale. Scale Out
+ # After the sale, AWS can scale resources back down to save costs. Scale In
+ # Overall we call this Elasticity. You can achieve elasticity using Auto Scaling.
 
+ < Scalability aka Vertical Scaling > Increasing the capacity of existing servers CPU RAM etc.
+ Scalability is the ability of a cloud service to handle increased workloads by adding resources, either vertically (scaling up) or horizontally (scaling out).
+ AWS offers services like Amazon EC2 Auto Scaling and Amazon RDS Read Replicas to help achieve scalability.
+ Vertical scaling involves adding more power (CPU, RAM) to an existing instance, while horizontal scaling involves adding more instances to distribute the load.
+ Benefits of scalability include the ability to accommodate growth, improved application performance, and better resource utilization.
 
-
-
-
-
-
-
-
-
-
-
+- Both can be achieved with minimal effort. Both can be either long term or short term.
+- It's a matter of few clicks for both.
 
 
 
