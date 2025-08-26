@@ -1,0 +1,72 @@
+# This note is about Elasticity and Scalability in AWS, their merits and demerits. Thanks to Reyaz Sir and Shaik Ashish.
+# Elasticity and Scalability are two important concepts in cloud computing that refer to the ability of a system to adapt to changing workloads and demands.
+
+```On Premises setting up things like networking, database, and servers can be complex and time-consuming. 
+In contrast, AWS provides a more streamlined approach to these tasks, allowing users to focus on their applications rather than the underlying infrastructure. 
+Hours and Days have reduced to Minutes and Seconds because of AWS.```
+
+$ Possible Risks of Using CLOUD: 
+1. Security and Privacy Concerns: because you can't access your infrastructure without connecting to internet.
+-  Your critical data is with the cloud provider. Although AWS is very secure, Security Breaches can be costly.
+2. Lock In: The proprietary nature of cloud services can make it difficult to migrate to another provider or back to on-premises infrastructure.
+- It creates long term dependency on the cloud provider's tools and services, making it challenging to switch providers or adopt new technologies.
+3. Isolation Failure: this risk involves the failure of isolation mechanisms that separate different customers' data and applications within a shared cloud environment.
+4. Management Interface Compromise: In case of cloud provider, the customer Management interfaces are accessible over the internet.
+- This can lead to unauthorized access and potential data breaches if not properly secured.
+5. Insecure or Incomplete Data Deletion: When data is deleted from the cloud, it may not be completely removed from all storage locations.
+- This can result in data remnants being accessible, posing a risk to sensitive information.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
