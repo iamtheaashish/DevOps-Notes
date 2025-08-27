@@ -62,3 +62,66 @@ Most production load balancers (like AWS ELB, NGINX, HAProxy, F5, etc.) check th
 ' if there is no AutoScaling, but there is failover , is downtime possible ? yes it is. 
 $ Fault Tolerance: The ability of a system to continue operating without interruption when one or more of its components fail. No Downtime (ASG - Auto Scaling Group)
 $ ASG (Auto Scaling Group): A group of EC2 instances that can be scaled in or out based on demand.
+----
+$ How Important is High Availability to the company?
+1. CEO: We don't lose the sales.
+2. Sales: We can extend our offer basing on HA Level.
+3. Account Manager: We don't upset our customers. (that often).
+4. Developers: We can be proud, our services are working.
+5. System Engineers: We can sleep well (and fsck, we love to!)
+6. Technical Support: No calls? Back to wow then ;)
+7. Operations: We can focus on improving the system, not just keeping it running.
+
+High Availability is crucial for maintaining business continuity and ensuring a positive user experience.
+
+However nicely we design our systems, failures can and will happen. 
+Therefore, it's essential to implement robust monitoring, failover, and redundancy strategies to minimize downtime and maintain service availability.
+
+In summary, high availability is not just a technical requirement but a business imperative that impacts all stakeholders within the organization.
+-------------
+* So How many 9's?
+- 99.9999999% uptime is often referred to as "seven nines" of availability.
+- Each "nine" represents a factor of ten in terms of downtime.
+- For example, five nines (99.999%) translates to about 5.26 minutes of downtime per year.
+- Seven nines (99.9999999%) would allow for only about 31.5 microseconds of downtime per year.
+
+- Achieving such high levels of availability typically requires significant investment in infrastructure, redundancy, and failover mechanisms.
+90% = down for 36.5 days per year
+95% = down for 18.25 days per year
+99% = down for 3.65 days per year
+99.9% = down for 8.76 hours per year                ---> 1 nine
+99.99% = down for 52.56 minutes per year            ---> 2 nines
+99.999% = down for 5.26 minutes per year            ---> 3 nines
+99.9999% = down for 31.5 seconds per year           ---> 4 nines
+99.99999% = down for 3.15 seconds per year          ---> 5 nines
+99.999999% = down for 315 microseconds per year     ---> 6 nines
+99.9999999% = down for 31.5 microseconds per year   ---> 7 nines
+99.99999999% = down for 3.15 microseconds per year  ---> 8 nines
+99.999999999% = down for 315 nanoseconds per year   ---> 9 nines
+99.9999999999% = down for 31.5 nanoseconds per year  ---> 10 nines
+99.99999999999% = down for 3.15 nanoseconds per year ---> 11 nines (Highest)
+
+AWS has SLA (Service Level Agreement) for its services, which typically guarantees a certain level of availability.
+For example, AWS EC2 has an SLA of 99.99% uptime, which translates to about 52.56 minutes of downtime per year. 
+This means that AWS commits to ensuring that the service is available and operational for at least 99.99% of the time.
+
+AWS has to pay for any downtime that exceeds the SLA guarantees, which can result in service credits for affected customers. 
+This creates a strong incentive for AWS to maintain high availability and invest in the necessary infrastructure and redundancy.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
