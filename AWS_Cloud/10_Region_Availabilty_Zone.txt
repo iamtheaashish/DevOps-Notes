@@ -1,0 +1,84 @@
+# This note is about AWS Regions and Availability Zones. Thanks to Reyaz Sir and Shaik Ashish.
+
+< Region is a geographical area that contains multiple data centers. Example: Asia Pacific (Mumbai) region (ap-south-1), Asia Pacific (Hyderabad) region (ap-south-2). >
++ Each region is isolated and independent from other regions, providing fault tolerance and stability.
++ AWS has multiple regions worldwide, allowing users to choose the best location for their resources based on latency, compliance, and cost.
+
+* Question: As a business, your customers are in India. Which AWS region should you choose to serve them best?
+ Answer: You should choose the Asia Pacific (Mumbai) region (ap-south-1) to serve your customers in India best. 
+ With least latency and compliance with local regulations, this region is optimized for Indian customers.
+
+ We choose region outside India, we won't have any problem, but we may face higher latency and potential compliance issues.
+
+ < Always Low latency is good compared to High latency. Choosing Region near our customers provides low latency and low response time. >
+--------
+$ In One REGION, there are multiple Availability Zones (AZs) that are isolated from each other to prevent failures from impacting other zones.
+$ Availability Zones are nothing but data centers within a region, each with its own power, cooling, and physical security.
+
+Regions has multiple Availability Zones (AZs) to provide high availability and fault tolerance. Or Region has multiple data centers (AZs) to ensure redundancy and reliability.
+If one AZ goes down, the others can take over, ensuring that applications remain available.
+
+* Example: In the Asia Pacific (Mumbai) region (ap-south-1), there are multiple AZs, such as ap-south-1a, ap-south-1b, and ap-south-1c.
+* Minimum of 2 AZs are required for high availability. There are regions like North Virginia (us-east-1) that have 6 AZs.
+
+"One Availability Zone (AZ) is not a single data center. It is a collection of data centers within a specific geographic area.
+For customer it seems like one AZ is a single data center. AZ is a group of data centers itself."
+
+# Inside Asia Pacific (Mumbai) region (ap-south-1):
+1a = Bandra, Juhu, Dadar
+1b = Andheri, Borivali, Malad
+1c = Thane, Navi Mumbai, Kalyan
+Total = 3 AZs
+Total = 9 data centers
+
+* It's a rare chance that all AZs in a region go down at the same time. It's a rare chance that all data centers in an AZ go down at the same time.
+=======
+`Network in Region`
+1. All availability zones in a region can talk to each other with high bandwidth, low latency, and secure connections. 
+2. Network is synchronized across AZs, allowing for seamless failover and redundancy. 
+3. Data is not replicated across AZs by default, so it's important to design applications with this in mind.
+
+!!! Network is synchronized not Data !!!
+!!! Region don't talk to each other by default. We need to set up VPC Peering or AWS Transit Gateway for inter-region communication. !!!
+========
+# If you put data in 1a, you can't see it in 1b or 1c without setting up inter-region communication.
+* What is DR (Disaster Recovery)?
+- Disaster Recovery (DR) is a set of policies and procedures to enable the recovery or continuation of vital technology infrastructure and systems following a natural or human-induced disaster. 
+- In the context of AWS, DR involves replicating data and applications across multiple regions or availability zones to ensure business continuity in the event of a failure.
+========
+In AWS we call server as instance.
+========
+" Although AWS is public cloud, it allows you to create a private cloud within it using VPC (Virtual Private Cloud). "
+* By default, two VPC can't talk to each other. We need to set up VPC Peering or AWS Transit Gateway for inter-VPC communication.
+# Inside VPC, we have multiple AZ, each AZ can have multiple instances.
+
+$ What is a VPC (Virtual Private Cloud)?
+1. A VPC (Virtual Private Cloud) is a logically isolated section of the AWS cloud where you can launch AWS resources in a virtual network that you define.
+2. You have complete control over your virtual networking environment, including selection of your own IP address range, creation of subnets, and configuration of route tables and network gateways.
+
+Sulabh Shauchalya complex is Public (AWS), compartments in Sulabh Shauchalya complex are like VPCs, and each compartment can have multiple instances (servers).
+
+- VPC is a security boundary that isolates resources within the AWS cloud.
+========
+
+// Load Balancer can distribute the traffic to multiple instances across multiple Availability Zones (AZs). \\
+
+// AutoScaling can scaleout the instances across multiple Availability Zones (AZs) based on demand. \\ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
