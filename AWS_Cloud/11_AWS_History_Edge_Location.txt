@@ -1,0 +1,117 @@
+# This note is about AWS History and Edge Locations. Thanks to Reyaz Sir and Shaik Ashish.
+
+* Invention requires two things:
+1. The ability to try a lot of experiments.
+2. Not having to live with the collateral damage of failed experiments.
+* AWS was started in 2003, launched in 2006. Failures are stepping stones to success.
+===========
+< Brief History of AWS>
+- in 2003 - Chris Pinkham and Benjamin Black present a paper on what Amazon's own internal infrastructure should look like.
+- They suggested selling it as a service and prepared a business case.
+- SQS or Simple Queue Service was one of the first services to be launched in 2004.
+- AWS officially launched in 2006.
+- 2007 over 180,000 developers on AWS platform.
+- 2010 all of amazon.com moved over.
+- 2012 First re:Invent conference held. Also AWS Edge Locations were announced.
+- 2013 Certification Launched
+- 2014 AWS Lambda announced. Committed to achieve 100% renewable energy usage for it's global infrastructure by 2020.
+- 2015 AWS revenue surpassed $7 billion.
+- 2016 AWS revenue surpassed $12 billion.
+- 2017 AWS revenue surpassed $17 billion.
+- 2018 AWS revenue surpassed $25 billion.
+- 2019 AWS revenue surpassed $35 billion.
+- 2020 AWS revenue surpassed $45 billion.
+
+> AWS is secure cloud services platform, offering compute power, database storage,
+content delivery and other functionality to help businesses scale and grow.
+
+> AWS offers a broad set of global compute, storage, database, analytics, application, 
+and deployment services that help organizations move faster, lower IT costs, and scale applications.
+-------
+"What is Edge Locations?"
+* Edge Location is a site that Amazon CloudFront uses to cache copies of your content for faster delivery to users at any location.
+* When a user requests content that you're serving with CloudFront, the request is routed to the edge location that can best serve the content, 
+* which is typically the nearest edge location to the user.
+* CloudFront has a global network of edge locations, allowing it to deliver content with low latency and high transfer speeds.
+* It will cache based on time to live (TTL) settings that you configure.
+* Edge Locations are completely managed by AWS. Just little bit of configuration is needed from your side.
++ Cache Invalidation
+  - You can invalidate cached content in an edge location if you need to update it before the TTL expires.
+  - This allows you to control the content that is served to users and ensure they receive the latest version.
+  - Invalidation is simply deleting the cached content from the edge location.
+* Edge Locations are mostly used for static content like images, videos, web pages, etc. for reading purposes.
+
++ Example: Netflix uses edge location to cache most watched web series and movies of that region for faster streaming with low latency.
+
+"What is AWS CloudFront?"
+* AWS CloudFront is a content delivery network (CDN) service that securely delivers data, videos, applications, 
+* and APIs to customers globally with low latency and high transfer speeds.
+* CloudFront integrates with other AWS services, such as Amazon S3, EC2, and Lambda, to provide a seamless content delivery experience.
+* With CloudFront, you can configure your content delivery settings, including caching behaviors, security features, and access controls, 
+* to meet your specific requirements.
+# CloudFront has Edge Location and Edge Locations are connected with CDN
+
+"What is the difference between AWS Region, Availability Zone, and Edge Location?"
+* AWS Region is a geographical area that contains a collection of data centers. 
+* Each region is isolated from other regions to provide fault tolerance and stability.
+* Availability Zone is a distinct location within a region that is engineered to be isolated from failures in other Availability Zones. 
+* Each region has multiple Availability Zones.
+* Edge Location is a site that Amazon CloudFront uses to cache copies of your content for faster delivery to users at any location.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
