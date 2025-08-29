@@ -99,10 +99,13 @@ It automatically scales applications by running code in response to events, such
 * Lambda supports various programming languages, including Node.js, Python, Java, and C#, allowing developers to use their preferred language.  
 
 /Lambda_Function
-+ A Lambda function is a small, single-purpose function that runs in response to events. It can be written in any supported programming language and can access other AWS services.
++ A Lambda function is a small, single-purpose function that runs in response to events. It can be written in any supported programming language (eg. Python, Java) and can access other AWS services.
 + Ravi was curious Developer, he was told not to launch EC2 instances at midnight. However, Ravi at midnight was trying to launch EC2 instances but it was getting terminated repeatedly.
 + Reyaz had created a Lambda function which terminated the instances Ravi created.
 ( Event-Driven Architecture: Lambda functions are triggered by events from other AWS services, such as S3 uploads, DynamoDB updates, or API Gateway requests.)
++ My team uses 44 ec2 instances to run our applications, and we only run it during business hours to save costs. 
++ At night, we use a Lambda function to automatically stop the instances, and in the morning, another Lambda function starts them again.
++ We don't have to manually start or stop the instances, which saves us time and reduces the risk of human error.
 
 
 
