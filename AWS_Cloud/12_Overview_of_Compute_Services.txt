@@ -1,0 +1,112 @@
+# This note is about AWS Compute Services. Thanks to Reyaz Sir and Shaik Ashish.
+
+< Amazon EC2 ~ Elastic Compute Cloud >
+
+Amazon EC2 (Elastic Compute Cloud) is a web service that provides resizable compute capacity in the cloud. 
+It allows users to launch and manage virtual servers, known as instances, on-demand. 
+EC2 offers a variety of instance types optimized for different use cases, such as general-purpose, compute-optimized, memory-optimized, and GPU instances. 
+Users can choose the operating system, instance type, and storage options to meet their specific requirements.
+
+Key features of Amazon EC2 include:
+
+1. **Scalability**: EC2 allows users to scale their compute resources up or down based on demand. 
+* This elasticity enables businesses to handle varying workloads efficiently.
+
+2. **Pay-as-you-go Pricing**: With EC2, users only pay for the compute capacity they use. 
+* This cost-effective model eliminates the need for upfront investments in hardware.
+
+3. **Security**: EC2 provides multiple layers of security, including virtual private clouds (VPCs),
+* security groups, and key pairs for secure access to instances.
+
+4. **Integration with Other AWS Services**: EC2 seamlessly integrates with other AWS services,
+* such as Amazon S3 for storage, Amazon RDS for databases, and AWS Lambda for serverless computing.
+
+5. **Customizable**: Users can choose from a wide range of instance types, operating systems, and
+* software configurations to create a tailored environment for their applications.
+
+Overall, Amazon EC2 is a powerful and flexible compute service that enables businesses to run applications in the cloud with ease.
+-----
+* We launch instances(like virtual machines) in EC2. It is a web service that provides resizable compute capacity in the cloud.
+===
+" Load Balancer in EC2: "
+- On premises, load balancer setup will take a lot of time. In AWS we call it ( Elastic Load Balancer (ELB)). 
+- It distributes incoming application traffic across multiple targets, such as EC2 instances, containers, and IP addresses.
+- ELB automatically scales its request handling capacity in response to incoming traffic.
+- ELB is completely managed by AWS(HA, Performance Auto Scaling). No need to create multiple load balancers manually.
+- No need to worry about auto-scaling of ELB.
+- ELB is a service not a server for us. You can't login to ELB but you can access ELB.
+===
+===========
+< Elastic BeanStalk > Platform as a Service (PaaS) ~ "Easy and quick deployment of applications"
+Elastic Beanstalk is a fully managed service that makes it easy to deploy and run applications in the cloud.
+It abstracts the underlying infrastructure, allowing developers to focus on writing code without worrying about the details of the environment.
+
+1. **Simplified Deployment**: 
+* Elastic Beanstalk automates the deployment process, handling tasks such as capacity provisioning, load balancing, and application health monitoring.
+
+2. **Support for Multiple Languages and Frameworks**: Elastic Beanstalk supports a variety of programming languages and frameworks, including Java, .NET, PHP, Node.js, Python, and Ruby.
+
+3. **Customizable Environment**:
+* While Elastic Beanstalk manages the infrastructure, developers can still customize the environment by configuring settings, adding environment variables, and using custom Docker containers.                      
+
+4. **Monitoring and Management**: 
+* Elastic Beanstalk provides built-in monitoring and management tools, allowing developers to track application performance, view logs, and make adjustments as needed.
+=============
+< Amazon LIGHTSAIL > Simplified cloud hosting
+
+Amazon Lightsail is a simplified cloud platform that offers virtual private servers (VPS), storage, and networking capabilities. It is designed for developers, small businesses, and startups who need an easy-to-use solution for deploying and managing applications in the cloud.
+
+1. **Easy-to-Use Interface**: 
+* Lightsail provides a user-friendly interface that simplifies the process of launching and managing instances.
+
+2. **Preconfigured Application Stacks**: Lightsail offers preconfigured application stacks, making it easy to deploy popular applications like WordPress, Joomla, and Magento with just a few clicks.
+
+3. **Predictable Pricing**:
+* Lightsail uses a straightforward pricing model with fixed monthly costs, allowing users to predict their expenses easily.
+
+4. **Integrated Networking**: 
+* Lightsail includes built-in networking features, such as static IP addresses, DNS management, and load balancing, to help users manage their applications more effectively.
+
+Overall, Amazon Lightsail is an excellent choice for users who want a simple and cost-effective way to deploy and manage applications in the cloud without the complexity of traditional cloud services.
+
+```
+Sweety is a blogger who wants to write a blog. 
+She is considering using Amazon Lightsail to host her blog because it offers a simple and 
+cost-effective solution for deploying and managing applications in the cloud.
+With Lightsail's easy-to-use interface and preconfigured application stacks,
+Sweety can quickly set up her blog without worrying about the underlying infrastructure.
+Additionally, the predictable pricing model allows her to manage her expenses effectively as her blog grows.
+
+She is a simple blogger and not a cloud engineer who will manage EC2 instances to host her blog and manage databases.
+```
++ LIGHTSAIL is for people who want a simple and cost-effective way to deploy and manage applications in the cloud without the complexity of traditional cloud services.
+===========
+< AWS Lambda > Serverless Computing - It is for developers
+
+AWS Lambda is a serverless computing service that allows developers to run code without provisioning or managing servers.
+It automatically scales applications by running code in response to events, such as changes in data or system state.
+
+1. **Event-Driven Architecture**: 
+* Lambda functions are triggered by events from other AWS services, such as S3 uploads, DynamoDB updates, or API Gateway requests.
+
+2. **Automatic Scaling**: 
+* Lambda automatically scales the number of function instances in response to incoming requests, ensuring consistent performance without manual intervention.
+
+3. **Pay-as-You-Go Pricing**: 
+* With Lambda, you only pay for the compute time consumed by your functions, making it a cost-effective solution for variable workloads.
+
+4. **Supports Multiple Languages**: 
+* Lambda supports various programming languages, including Node.js, Python, Java, and C#, allowing developers to use their preferred language.  
+
+/Lambda_Function
++ A Lambda function is a small, single-purpose function that runs in response to events. It can be written in any supported programming language and can access other AWS services.
++ Ravi was curious Developer, he was told not to launch EC2 instances at midnight. However, Ravi at midnight was trying to launch EC2 instances but it was getting terminated repeatedly.
++ Reyaz had created a Lambda function which terminated the instances Ravi created.
+( Event-Driven Architecture: Lambda functions are triggered by events from other AWS services, such as S3 uploads, DynamoDB updates, or API Gateway requests.)
+
+
+
+
+
+
+
