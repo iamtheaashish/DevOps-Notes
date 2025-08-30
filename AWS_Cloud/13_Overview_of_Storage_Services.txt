@@ -44,10 +44,24 @@ Server Side Operating System ~ Windows Server, Linux Server
 * Volume size can be increased on the FLY (no need to shutdown EC2 instance).
 * Volume size can't be decreased directly without detaching the volume.
 
+// Root volume device name is always /dev/sda1 or /dev/xvda (Linux). 
+// Additional volume device name is always /dev/sdb or /dev/sdc or /dev/sdd or /dev/sde or /dev/sdf or /dev/xvdf (Linux).
 
+# Is it possible to detach the root volume while EC2 is running?
++ No, it is not possible to detach the root volume while the EC2 instance is running.
++ The root volume is essential for the instance's operation, and detaching it would cause the instance to become inaccessible.
++ In order to detach the root volume, you must stop the EC2 instance first. Once the instance is stopped, you can detach the root volume and then start the instance again.
 
+# Is it possible to detach the additional volume while EC2 is running?
++ Yes, it is possible to detach the additional volume while the EC2 instance is running.
++ However, it is recommended to unmount the volume from the operating system before detaching it to avoid data loss.
++ Not recommended to detach the volume while it is in use by an application, as this could lead to data corruption.
 
+// EC2 instance has Availability Zones, EBS volumes also have Availability Zones. 
+// EC2 instance and EBS volume must be in the same Availability Zone to attach the volume to the instance. // "very important certification exam question"
 
+* 1a and 1b EC2 instances of ap-southeast-1 have EBS volumes 1q and 1r respectively. Can you attach 1q to 1b? No, because they are in different Availability Zones. *
+# Creating and Attaching should be same availability zone.
 
 
 
