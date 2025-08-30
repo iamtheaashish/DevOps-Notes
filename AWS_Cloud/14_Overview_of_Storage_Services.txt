@@ -1,0 +1,90 @@
+# This note is in continuation of the previous note on AWS Storage Services. Thanks to Reyaz Sir and Shaik Ashish.
+* 1a and 1b EC2 instances of ap-southeast-1 have EBS volumes 1q and 1r respectively.
+$ 1q has bahubali movie and 1r has robo movie. We want to copy the bahubali movie from 1q to 1r and Robo movie from 1r to 1q.
+// If you want to move the volume from one AZ to another different AZ, use snapshots.
+* Snapshots are point-in-time copies of EBS volumes that can be used for backup, recovery, and migration purposes.
+* Snapshots are stored in S3 and are incremental, meaning that only the changes made since the last snapshot are saved.
+* You can create a snapshot of an EBS volume at any time, and the snapshot can be used to create a new volume or restore an existing volume.
+* Snapshots can be shared with other AWS accounts or made public, allowing for easy collaboration and sharing of data.
+
+
+"It is not possible to attach single EBS volumes to multiple EC2 instances at the same time.
+Volumes cannot be shared across EC2 instances."
+--------------
+< Elastic File System (EFS) >
+
+EFS is a fully managed, scalable, and elastic NFS file system that can be mounted on multiple EC2 instances simultaneously.
+It is designed for use cases that require shared access to file data, such as content management, web serving, and data analytics.
+
+* EFS provides a simple and scalable way to share files across multiple EC2 instances.
+$ EFS is fully managed, meaning that AWS takes care of the infrastructure, scaling, and availability.
+* EFS is elastic, allowing you to automatically scale your file system up or down based on demand.
+* EFS supports NFSv4, making it compatible with a wide range of applications and workloads.
+* EFS is designed for high availability and durability, with data automatically replicated across multiple Availability Zones.
+* No pre-provisioning is required.
+* We have to mount EFS on each EC2 instance that needs access to the file system.
+* EFS is only for Linux based EC2 instances. Not Windows(FSX (FSx for Windows File Server) is for Windows; similar service).
+* Can be mounted to multiple EC2 instances across multiple AZs.
+EFS is ideal for use cases that require shared access to file data, such as:
+
+* Content management systems
+* Web serving
+* Data analytics
+* Machine learning
+* Dev/test environments
+
+EFS is a great choice for applications that require low-latency access to shared file data, and it can be easily integrated with other AWS services.
+# Shaik Ashish showed me how to create and manage NFS inside of EFS and shared data between multiple EC2 instances.
+--------------
+< Glacier -- Amazon S3 Glacier >
+Glacier is a low-cost, long-term storage service designed for data archiving and backup.
+It is optimized for "infrequent access" and provides secure, durable, and scalable storage for data that is rarely accessed.
++ Companies like Snapchat, Ryan Air, Pinterest, Canva use Glacier for their archival storage needs.
+* Glacier is designed for data that is not frequently accessed and can tolerate retrieval times of several hours.
+* It is cheaper than standard S3 storage, making it a cost-effective solution for long-term data retention.
+* Glacier is object storage, meaning that data is stored as individual objects within a flat namespace, rather than in a hierarchical file system.
+* Glacier provides different retrieval options, allowing you to choose the speed and cost of data retrieval based on your needs.
+* Glacier is integrated with S3, allowing you to easily move data between S3 and Glacier for cost-effective storage management.
+---------------
+< Snowball -- AWS Snowball >
+It is a physical device. 
+Snowball is a data transport solution that helps you securely transfer large amounts of data into and out of AWS.
+It is designed for use cases where network bandwidth is limited or where you need to transfer petabytes of data.
+
+* Snowball is a physical device that you can use to transfer data to AWS.
+* You can order a Snowball device through the AWS Management Console.
+* Once you receive the device, you can connect it to your local network and transfer data to it.
+* After the data transfer is complete, you ship the device back to AWS.
+* AWS then uploads the data from the Snowball device to your specified S3 bucket.
+* Snowball is designed to be secure, with encryption and tamper-proofing features.
+* Snowball can be used for a variety of use cases, including data migration, disaster recovery, and content distribution.
+
+- Practically, using internet to upload large amounts of data can be time-consuming and may not be feasible due to bandwidth limitations. 
+- Snowball provides a more efficient alternative for transferring large datasets to AWS.
+- Internet isn't always reliable for transferring large amounts of data, especially in areas with limited connectivity.
+$ https://www.youtube.com/watch?v=BIx9bbe58K8 
+
+# There are several types of Snow Devices:
+1. Snowball Edge --- Snowball Edge is a more powerful version of Snowball that includes on-board storage and compute capabilities.
+2. Snowmobile --- Snowmobile is a larger, truck-sized data transfer service designed for moving extremely large amounts of data (up to exabytes) to AWS.
+3. Snowcone --- Snowcone is a smaller, portable version of Snowball that is designed for edge computing and data collection in remote locations.
+
+Looks like a briefcase, AWS will courier it to you. It has storage in Terabytes (TB). You put your data into it and ship it back to AWS. They will upload the data to your S3 bucket.
+---------------
+< Storage Gateway -- AWS Storage Gateway >
+Synchronize on-premises environments with AWS storage services.
+Storage Gateway provides a hybrid cloud storage solution that enables on-premises applications to use AWS cloud storage.
+It supports various storage interfaces, including file, volume, and tape gateways.
+Storage Gateway can be used for backup and restore, disaster recovery, and data migration.
+
+# Example: Like Ryan Air wants to use AWS for their data storage needs, they can leverage Storage Gateway to seamlessly integrate their on-premises data with AWS cloud storage.
+# Without using console commands, they can set up a Storage Gateway appliance on-premises to cache frequently accessed data and store less frequently accessed data in the cloud.
+More about this service later.
+---------------
+$$ DataBase Service $$
+< Amazon RDS -- Relational Database Service >
+
+
+
+
+
