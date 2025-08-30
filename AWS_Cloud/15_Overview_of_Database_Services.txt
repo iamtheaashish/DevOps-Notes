@@ -1,0 +1,2 @@
+# This note is about AWS Database Services. Thanks to Reyaz Sir and Shaik Ashish.
+RDMS

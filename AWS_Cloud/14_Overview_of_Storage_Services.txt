@@ -81,8 +81,7 @@ Storage Gateway can be used for backup and restore, disaster recovery, and data 
 # Without using console commands, they can set up a Storage Gateway appliance on-premises to cache frequently accessed data and store less frequently accessed data in the cloud.
 More about this service later.
 ---------------
-$$ DataBase Service $$
-< Amazon RDS -- Relational Database Service >
+
 
 
 
