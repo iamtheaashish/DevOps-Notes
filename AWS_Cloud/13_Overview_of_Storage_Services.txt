@@ -1,0 +1,53 @@
+# This note is about AWS Storage Services. Thanks to Reyaz Sir and Shaik Ashish.
+< S3 - Simple Storage Service >
+S3 is an object storage service that offers industry-leading scalability, data availability, security, and performance.
+- S3 is just to store your files. S3 is used to store FLAT Files. With S3, you can upload/download and access your files just like Google Drive.
+
+- Folder in S3 is called a "Bucket". A bucket is a container for storing objects (files) in S3.
+- File in S3 is called an "Object". An object consists of the file data and metadata, such as the file name and size.
+- Bucket (folder) is a container for storing objects (files) in S3.
+
+# S3 is cheaper than EC2
+# You can't run applications, execute code, or perform computations on S3. You can just store files nothing more. 
+# You can't attach S3 to EC2 instances directly to install OS.
+# S3 supports static website hosting (HTML, CSS, JS files only).
+
+* S3 is serverless. No need to worry about performance, High Availability, Scalability, etc. AWS will take care of all these things.
+* S3 is object based storage, meaning it stores data as objects within buckets. - Certification Question
+* S3 is unlimited storage, allowing you to store as much data as you need without worrying about running out of space. 
+==============
+< Elastic Block Store (EBS) >
+
+EBS is a block based storage service that provides persistent storage for EC2 instances. 
+It is designed for workloads that require low-latency access to data and is suitable 
+for use cases such as databases, file systems, and applications that require frequent read/write access to data.
+
+* EBS volumes are attached to EC2 instances and can be used as primary storage for the instance.
+* EBS provides the ability to create snapshots, which are point-in-time backups of the volume that can be used for disaster recovery or to create new volumes.
+* EBS volumes can be resized and modified without downtime, allowing for flexible storage management.
+* EBS is designed for high availability and durability, with data automatically replicated across multiple Availability Zones.
+* You can install applications and databases on EBS volumes, making it suitable for a wide range of use cases.
+# Hard Disk = Volume = EBS Volume
++ EBS is huge, it can go up to 64 TB in size per volume. Create one volume then attach that EBS Volume to your EC2 instance. 
++ You can attach and detach volumes from EC2 instances as needed, allowing for flexible storage management. On-premises, this would require physically moving disks between servers.
++ Can you attach multiple volumes to EC2 instances? Yes, you can attach multiple EBS volumes to a single EC2 instance, allowing for increased storage capacity and performance.
+
+Client Side Operating System ~ Windows 7 , 10, 11, Linux Desktop, MAC, Android
+Server Side Operating System ~ Windows Server, Linux Server
+
+" EC2 instance has a default volume and that is called ROOT Volume, The Root volume has OS installed on it (Windows or Linux)." 
+" How many Root volumes can EC2 have? 1 only." Rest of the volumes are called 'Additional Volumes'. 
+
+"Can you attach single EBS volume to multiple EC2 instances? No, you cannot attach a single EBS volume to multiple EC2 instances at the same time."
+* Volumes should be pre-provisioned before they can be attached to EC2 instances. Meaning you need to create the volume first before you can attach it to an instance.
+* No auto-scaling for EBS volumes. You need to manually manage the size and performance of your EBS volumes.
+* Volume size can be increased on the FLY (no need to shutdown EC2 instance).
+* Volume size can't be decreased directly without detaching the volume.
+
+
+
+
+
+
+
+
