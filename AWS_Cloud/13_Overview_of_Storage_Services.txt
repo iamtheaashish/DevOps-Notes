@@ -62,6 +62,5 @@ Server Side Operating System ~ Windows Server, Linux Server
 
 * 1a and 1b EC2 instances of ap-southeast-1 have EBS volumes 1q and 1r respectively. Can you attach 1q to 1b? No, because they are in different Availability Zones. *
 # Creating and Attaching should be same availability zone.
-
-
-
+* 1a and 1b EC2 instances of ap-southeast-1 have EBS volumes 1q and 1r respectively. Can you attach 1q to 1b? No, because they are in different Availability Zones. *
+# Creating and Attaching should be same availability zone.
