@@ -1,2 +1,119 @@
 # This note is about AWS Database Services. Thanks to Reyaz Sir and Shaik Ashish.
-RDMS
+< Amazon RDS -- Relational Database Service >
+- It is a managed relational database service provided by AWS.
+- It automates time-consuming tasks such as hardware provisioning, database setup, patching, and backups.
+- RDS provides high availability and durability with Multi-AZ deployments.
+- It offers read replicas for improved read performance and scalability.
+- RDS is fully integrated with other AWS services, making it easy to build and manage applications in the cloud.
+- Supports Relational Databases only.
+- RDS is not a database, it is a Database as a Service (DBaaS).
+- It contains 6 different database engines. Like MySQL, PostgreSQL, Oracle, SQL Server, MariaDB, and Amazon Aurora.
+                                                  ||        ||                            ||               ||
+                                              Opensource Opensource                  Community       Proprietary 
+
+"On- premises Database has these issues:"
+1. Limited scalability
+2. High maintenance costs
+3. Complex backup and recovery processes
+4. Difficulty in managing high availability
+5. Limited integration with other cloud services
+6. Security and compliance challenges
+7. High Availability challenges
+================================
+# RDMS was good in olden days but now NoSQL is more popular.
+# Facebook won't be using RDMS for their massive data needs.
+# RDMS is not suitable for unstructured data and large-scale applications.
+# NoSQL databases are designed to handle large volumes of unstructured data and provide better scalability.
+# NoSQL = Not Only SQL --- There is something else also.
+# NoSQL databases can be document-based, key-value pairs, wide-column stores, or graph databases.
+# Examples of NoSQL databases include MongoDB (document-based), Redis (key-value store), Cassandra (wide-column store), and Neo4j (graph database).
+=================================
+< Amazon DynamoDB >
+- It is a fully managed NoSQL database service provided by AWS.
+- DynamoDB is designed for high availability and scalability.
+- It supports key-value and document data structures.
+- DynamoDB automatically scales up and down to adjust for capacity and maintain performance.
+- It offers built-in security, backup and restore, and in-memory caching.
+- DynamoDB is serverless, meaning there is no infrastructure to manage.
+- It is commonly used for applications that require consistent, single-digit millisecond response times at any scale.
+- Only good for normal workloads with predictable traffic patterns.
+
+- Not suitable for complex queries and transactions.
+- Limited support for joins and multi-document ACID transactions.
+- Requires careful data modeling to avoid performance issues.
+- May require additional services for features like search and analytics.
+
+=================================
+< Amazon Redshift -- Huge Data Warehouse >
+
+- It is a fully managed, petabyte-scale data warehouse service provided by AWS.
+- Redshift is designed for online analytical processing (OLAP) and big data analytics.
+- It uses columnar storage and parallel query execution to improve performance.
+- Redshift automatically scales to handle large volumes of data and concurrent users.
+- It integrates with various data sources, including S3, RDS, and DynamoDB.
+- Redshift offers advanced security features, including encryption and VPC support.
+- It is commonly used for business intelligence, reporting, and data analysis.
+
+- Not suitable for transactional workloads (OLTP).
+- Limited support for unstructured data.
+- Requires careful schema design and data distribution for optimal performance.
+- May require additional services for features like real-time analytics and machine learning.
+
+Database vs Data Warehouse:
+1. Purpose:
+   > Databases are designed for transactional processing (OLTP) and are optimized for read and write operations.
+   > Data warehouses are designed for analytical processing (OLAP) and are optimized for read-heavy operations and complex queries.
+
+2. Data Structure:
+   > Databases typically use a normalized schema to reduce data redundancy and improve data integrity.
+   > Data warehouses use a denormalized schema (e.g., star or snowflake schema) to optimize query performance and simplify data retrieval.
+
+3. Data Volume:
+   > Databases handle smaller volumes of data and are optimized for high transaction rates.
+   > Data warehouses handle large volumes of historical data and are optimized for batch processing and complex queries.
+
+4. Query Complexity:
+   > Databases support simple queries and transactions with ACID properties.
+   > Data warehouses support complex queries, aggregations, and analytics but may not provide full ACID compliance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
