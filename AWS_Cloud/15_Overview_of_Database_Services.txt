@@ -76,34 +76,31 @@ Database vs Data Warehouse:
    > Databases support simple queries and transactions with ACID properties.
    > Data warehouses support complex queries, aggregations, and analytics but may not provide full ACID compliance.
 
+-----------------------
+# MemcacheD, Redis, Varnish are in-memory caching systems that improve application performance by storing frequently accessed data in memory for quick retrieval.
+# Let's understand them with an example:
 
+# Consider a web application that retrieves user profiles from a database.
+# Each time a user profile is requested, the application queries the database, which can be slow and resource-intensive.
 
+# By implementing an in-memory caching layer using MemcacheD, Redis, or Varnish, the application can store frequently accessed user profiles in memory.
+# The next time a user profile is requested, the application can quickly retrieve it from the cache instead of querying the database.
 
+# This approach significantly improves response times and reduces the load on the database, resulting in a more efficient and scalable application.
 
++ AWS came up with < Amazon ElastiCache >, a fully managed in-memory caching service that supports MemcacheD and Redis.
+* ElastiCache makes it easy to deploy, operate, and scale an in-memory cache in the cloud.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+< Amazon ElastiCache >
+It is a fully managed in-memory caching service that supports MemcacheD and Redis.
+ElastiCache makes it easy to deploy, operate, and scale an in-memory cache in the cloud.
+------------------------
+$ Networking and Content Delivery
+1. Amazon VPC  
+2. Amazon Route 53 -- Routes traffic to AWS resources and external endpoints.
+3. Amazon CloudFront -- Content delivery network (CDN) for delivering content with low latency.
+4. AWS Global Accelerator -- Improves the availability and performance of applications with global users.
+5. AWS Direct Connect -- Establishes a dedicated network connection from on-premises to AWS.
 
 
 
