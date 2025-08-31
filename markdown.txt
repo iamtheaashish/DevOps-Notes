@@ -1,0 +1,186 @@
+# This is a note in text document about how to use markdown(.md) file.
+# Syntax for Markdown is different on different platforms.
+# This is specific to GitHub Flavored Markdown (GFM)
+
+
+==========
+# FOR DIFFERENT TYPES OF HEADING
+```md
+# This is a heading 1
+```
+
+```md
+## This is a heading 2  
+```
+
+```md
+### This is a heading 3
+```
+
+```md
+#### This is a heading 4
+```
+
+```md
+##### This is a heading 5
+```
+
+```md
+###### This is a heading 6
+```
+==========
+# Text Formatting
+```md
+This is **bold** text.
+```
+
+```md
+This is *italic* text.
+```
+
+```md
+This ***bold and italic*** text is both.
+```
+==========
+# Strikethrough 
+```md
+Strike of ~~text~~
+```
+# Highlight Text
+```md
+Test is <mark>Highlighted text</mark>
+```
+# Superscript and Subscript
+```md
+This is superscript. X<sup>2</sup>
+This is subscript. H<sub>2</sub>O
+```
+
+```md
+Emoji 😀 😃 😄 😁 😆 😅
+```
+==========
+# Code
+```md
+This is `inline code`
+```
+
+```md
+Multiple Lines of code
+```js
+console.log("Hello World");
+console.log("This is a test");
+```
+```
+
+# Blockquotes 
+```md
+> This is a blockquote
+>> Nested blockquote
+>>> More nested blockquote
+```
+==========
+# Links
+```md
+[Link Text](https://www.example.com)
+```
+
+```md
+<https://www.example.com>
+```
+==========
+# For images
+```md
+![Alt Text](https://www.example.com/image.jpg)
+```
+==========
+# Use three asterisks or underscores or hyphens for horizontal rules. Just give an empty line before and after.
+```md
+***
+___
+---
+```
+
+# Ordered List
+```md
+1. First item
+2. Second item
+3. Third item
+```
+
+# Unordered List
+```md
+- First item
+- Second item
+- Third item
+```
+
+# Unordered List
+```md
+* First item
+* Second item
+* Third item
+```
+
+# Unordered List
+```md
++ First item
++ Second item
++ Third item
+```
+
+# Unordered List Nesting
+```md
+- First item
+- Second item
+- Third item
+    * Item 4
+    * Item 5
+        + Last Item
+```
+
+==========
+# Table with 3 Columns and 3 Rows, Atleast 3 dashes to separate. 
+# No matter if you have more than 3, it is going to render exactly the same.
+```md
+
+| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+| Row 1    | Data 1   | Data 2   |
+| Row 2    | Data 3   | Data 4   |
+| Row 3    | Data 5   | Data 6   |
+
+```
+
+# Text Alignment inside of Table, use colons.
+# Header 3 will be right-aligned.
+# Header 2 will be left-aligned.  
+# Header 1 will be center-aligned.
+```md
+
+| Header 1 | Header 2 | Header 3 |
+|:----------:|:----------|----------:|
+| Row 1    | Data 1   | Data 2   |
+| Row 2    | Data 3   | Data 4   |
+| Row 3    | Data 5   | Data 6   |
+
+```
+==========
+# Checklist - beaware of spaces between symbols.
+```md
+- [ ] Item 1
+- [ ] Item 2
+- [ ] Item 3
+- [x] Completed Item
+```
+
+
+
+
+
+
+
+
+
+
+
