@@ -1,0 +1,10 @@
+# This note is about AWS Cloud Security and Identity Management. Thanks to Reyaz sir and Shaik Ashish.
+
+< IAM ~ Identity and Access Management >
+- IAM is a web service that helps you securely control access to AWS services and resources for your users.
+- You can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.
+- IAM enables you to grant different levels of access to different users, ensuring that only authorized users can access sensitive resources.
+- It supports multi-factor authentication (MFA) for an added layer of security.
+- IAM is integrated with many AWS services, making it easy to manage access across your AWS environment.
+* One main company AWS account and multiple IAM users and roles can be created to manage access to AWS resources.
+ 
