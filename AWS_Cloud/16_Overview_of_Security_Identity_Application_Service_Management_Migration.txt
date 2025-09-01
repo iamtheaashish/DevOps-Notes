@@ -1,5 +1,4 @@
 # This note is about AWS Cloud Security and Identity Management. Thanks to Reyaz sir and Shaik Ashish.
-
 < IAM ~ Identity and Access Management >
 - IAM is a web service that helps you securely control access to AWS services and resources for your users.
 - You can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.
@@ -7,4 +6,93 @@
 - It supports multi-factor authentication (MFA) for an added layer of security.
 - IAM is integrated with many AWS services, making it easy to manage access across your AWS environment.
 * One main company AWS account and multiple IAM users and roles can be created to manage access to AWS resources.
- 
+
+In IAM there are two types of identities:
+1. AWS account Root User ---> Has full access to all AWS services and resources in the account. He is admin.
+2. IAM Users and Roles ---> Can be granted specific permissions to access AWS resources.
+* Permissions are nothing but policies that define what actions are allowed or denied on specific resources.
+
+> You can secure AWS environment using shared responsibility model.
+==============
+< AWS Inspector >
+- AWS Inspector is a security assessment service that helps improve the security and compliance of applications deployed on AWS.
+- It automatically assesses applications for vulnerabilities or deviations from best practices.
+- AWS Inspector provides a detailed report of findings, including security vulnerabilities and recommendations for remediation.
+- It integrates with other AWS services, such as AWS Lambda and Amazon CloudWatch, to enable automated security assessments.
+- AWS Inspector supports both network and host assessments, allowing you to evaluate the security of your entire application stack.
+> Like a School Class Monitor, AWS Inspector keeps an eye on your applications and ensures they follow security best practices.
+==============
+< AWS Trusted Advisor >
+- AWS Trusted Advisor is an online resource to help you reduce cost, increase performance, and improve security by optimizing your AWS environment.
+- It provides real-time guidance to help you provision your resources following AWS best practices.
+- Trusted Advisor checks for opportunities to save money, improve system performance, and close security gaps.
+- It offers insights across various categories, including cost optimization, performance, security, fault tolerance, and service limits.
+> AWS Trusted Advisor is like a personal trainer for your AWS environment, helping you stay fit and healthy by following best practices.
+
+==============
+< Amazon SES ~ Simple Email Service >
+- Amazon SES is a cloud-based email sending service designed to help businesses send marketing, notification, and transactional emails.
+- It provides a cost-effective way to send and receive emails using your own email addresses and domains.
+- Amazon SES offers features such as email tracking, analytics, and feedback loops to improve email deliverability.
+- It integrates with other AWS services, such as Amazon S3 and AWS Lambda, to enable automated email workflows.
+> Amazon SES is like a reliable postal service for your applications, ensuring your messages reach their destination quickly and securely.
+==============
+< Amazon SNS ~ Simple Notification Service >
+- Amazon SNS is a fully managed messaging service that enables you to decouple and scale microservices, distributed systems, and serverless applications.
+- It allows you to send messages or notifications to a large number of subscribers or endpoints, such as AWS Lambda functions, HTTP/S endpoints, and email addresses.
+- Amazon SNS supports various messaging patterns, including pub/sub, point-to-point, and request/reply.
+- It provides features such as message filtering, delivery status tracking, and message encryption to enhance the security and reliability of your notifications.
+> Amazon SNS is like a megaphone for your applications, broadcasting important messages to all the right people and systems.
+==============
+< Amazon SQS ~ Simple Queue Service >
+- Amazon SQS is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications.
+- It allows you to send, store, and receive messages between software components at any volume without losing messages.
+- Amazon SQS supports two types of queues: Standard Queues (for maximum throughput) and FIFO Queues (for ordered message processing).
+- It provides features such as message visibility timeout, dead-letter queues, and message encryption to enhance the reliability and security of your message processing.
+> Amazon SQS is like a post office for your applications, ensuring that messages are delivered safely and in the right order.
+> Used mostly by Developers to manage communication between microservices.
+==============
+< Amazon CloudWatch > Monitor Entire AWS
+- Amazon CloudWatch is a monitoring and observability service that provides real-time insights into your AWS resources and applications.
+- It collects and tracks metrics, logs, and events from various AWS services, allowing you to monitor the health and performance of your infrastructure.
+- CloudWatch provides features such as alarms, dashboards, and automated actions to help you respond to changes in your environment.
+- It integrates with other AWS services, such as AWS Lambda and Amazon SNS, to enable event-driven architectures and automated workflows.
+> Amazon CloudWatch is like a fitness tracker for your AWS environment, helping you keep an eye on your resources and stay in shape.
+==============
+< AWS CloudTrail > Monitor Particular Instance
+- AWS CloudTrail is a service that enables governance, compliance, and operational and risk auditing of your AWS account.
+- It provides event history of your AWS account activity, including actions taken through the AWS Management Console, AWS SDKs, command line tools, and other AWS services.
+- CloudTrail helps you track changes to your AWS resources and detect unusual activity in your account.
+- It integrates with other AWS services, such as Amazon CloudWatch and AWS Lambda, to enable automated responses to specific events.
+> AWS CloudTrail is like a security camera for your AWS environment, recording all activity and helping you investigate any suspicious behavior.
+> Used mostly by Security and Compliance teams to monitor and audit AWS account activity.
+==============
+< AWS Config >
+- AWS Config is a service that enables you to assess, audit, and evaluate the configurations of your AWS resources.
+- It provides a detailed inventory of your AWS resources and their configuration history, allowing you to track changes over time.
+- AWS Config helps you ensure compliance with internal policies and external regulations by enabling you to define and enforce configuration rules.
+- It integrates with other AWS services, such as AWS CloudTrail and Amazon SNS, to enable automated responses to configuration changes.
+> AWS Config is like a compliance officer for your AWS environment, ensuring that all resources are configured correctly and remain in compliance.
+==============
+< AWS Support >
+- AWS Support is a service that provides customers with technical support and guidance for their AWS resources and applications.
+- It offers various support plans, including Basic, Developer, Business, and Enterprise, each with different levels of support and response times.
+- AWS Support provides access to AWS experts, technical documentation, and best practices to help customers optimize their use of AWS services.
+- It integrates with other AWS services, such as AWS CloudTrail and AWS Config, to enable proactive monitoring and issue resolution.
+> AWS Support is like a personal trainer for your AWS environment, helping you get the most out of your resources and stay on track.
+==============
+$ Migration tools
+<Amazon DMS ~ Database Migration Service>
+- AWS Database Migration Service (DMS) is a service that helps you migrate databases to AWS quickly and securely.
+- It supports homogeneous migrations (e.g., Oracle to Oracle) and heterogeneous migrations (e.g., Oracle to Amazon Aurora).
+- DMS handles the complexities of database migration, such as schema conversion, data replication, and change data capture.
+- It minimizes downtime during migration by allowing you to keep your source database operational while the migration is in progress.
+> AWS DMS is like a moving company for your databases, ensuring a smooth and efficient transition to the cloud.
+
+< Server Migration Service >
+- AWS Server Migration Service (SMS) is a service that helps you migrate on-premises servers to AWS quickly and securely.
+- It automates the migration process by allowing you to create and manage replication jobs for your servers.
+- SMS supports both Windows and Linux servers and can migrate entire server instances or individual applications.
+- It minimizes downtime during migration by allowing you to test your migrated servers before cutover.
+> AWS SMS is like a moving company for your servers, ensuring a smooth and efficient transition to the cloud.
+
