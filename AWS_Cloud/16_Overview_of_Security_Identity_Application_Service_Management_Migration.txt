@@ -81,6 +81,14 @@ In IAM there are two types of identities:
 - It integrates with other AWS services, such as AWS CloudTrail and AWS Config, to enable proactive monitoring and issue resolution.
 > AWS Support is like a personal trainer for your AWS environment, helping you get the most out of your resources and stay on track.
 ==============
+< Amazon Direct Connect >
+- Amazon Direct Connect is a cloud service solution that makes it easy to establish a dedicated network connection from your premises to AWS.
+- It provides a more consistent network experience compared to internet-based connections and can reduce bandwidth costs.
+- Direct Connect can be used to connect to all AWS services in the region, including Amazon S3, Amazon EC2, and Amazon VPC.
+- It integrates with AWS Transit Gateway to enable connectivity between multiple VPCs and on-premises networks.
+> Amazon Direct Connect is like a private highway for your data, providing a fast and reliable connection to the cloud.
+
+==============
 $ Migration tools
 <Amazon DMS ~ Database Migration Service>
 - AWS Database Migration Service (DMS) is a service that helps you migrate databases to AWS quickly and securely.
