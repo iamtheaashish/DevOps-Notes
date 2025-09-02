@@ -1,0 +1,10 @@
+# This note is about IAM Groups, Policies, and Roles in AWS. Thanks to Reyaz Sir and Shaik Ashish.
+Two Types of Access in AWS:
+1.) **Programmatic Access** (via API, CLI, SDK) -----------------------> Keys are required. 
+2.) **AWS Management Console Access** (via web interface)
+
+`We have to share keys for programmatic access to IAM users. Every IAM user has their own keys.`
+`Create keys only when there is requirement. Not unnecessarily.`
+`Keys also have the same permissions like console access.`
+`Every IAM user can have maximum 2 set of keys.`
+`Keys are visible only at the time of creation.`
