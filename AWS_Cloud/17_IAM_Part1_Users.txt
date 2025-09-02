@@ -1,1 +1,39 @@
 # This note is about IAM Users in AWS. Thanks to Reyaz Sir and Shaik Ashish.
+# IAM means Identity and Access Management.
+
+< IAM Users - Deep Dive >
++ IAM is completely free. AWS will not charge for using IAM.
++ IAM is used for security purpose. IAM allows you to manage access to AWS services and resources securely.
++ With IAM, you can control centrally the entire AWS environment and manage user access to resources.
++ Is it possible to share AWS root account ? Yes but with IAM Roles. Don't share Email and Password. Idiot
++ IAM user has limited permissions/policies compared to the root user.
++ For IAM users you can attach or detach the policies or permissions anytime.
++ IAM is global.
++ It is not recommended to use root account for daily activities, instead use IAM users.
+
+> Difference between AWS Root User and IAM Admin User
++ IAM Admin will not have BILLING and related permissions.
+
+< Global and Regional Permissions >
+- Global permissions apply to all AWS regions, while regional permissions apply only to a specific region.
+- IAM policies can be created to grant permissions at both the global and regional levels.
+- It is important to understand the scope of permissions when designing your IAM policies to ensure they align with your security requirements.
+- There are few services that are regional and cannot be accessed globally, such as Amazon S3 buckets configured with specific region settings.
+- There are few services that are global and can be accessed from any region, such as Amazon CloudFront.
+
+* USE MULTI FACTOR AUTHENTICATION (MFA) to secure your AWS environment. Generated in your PHONE.
+* MFA is for both root account and IAM users.
+
+There are two types of Access in AWS: 
+1.) **Programmatic Access** (via API, CLI, SDK) 
+2.) **AWS Management Console Access** (via web interface)
+
+API means Application Programming Interface. It allows different software applications to communicate with each other.
+CLI means Command Line Interface. It allows users to interact with the AWS services using command-line commands.
+SDK means Software Development Kit. It provides a set of tools and libraries for developers to build applications that interact with AWS services.
+
+/Programmatic_Access
+You login with access keys (Access Key ID and Secret Access Key).
+
+/Management_Console_Access
+You login with your username and password. In Browser.
