@@ -1,0 +1,5 @@
+# This note is about <Creating IAM Groups and Adding Users to Groups in AWS>. Thanks to Shaik Ashish and Reyaz Sir.
+# ARM means Amazon Resource Name.
+
++ You can add or detach policies for the IAM users and groups you create.
++ You can not create nested groups.
