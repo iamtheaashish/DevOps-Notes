@@ -3,3 +3,63 @@
 
 + You can add or detach policies for the IAM users and groups you create.
 + You can not create nested groups.
+
+< What Does DevOps Engineers do in company? >
+- Let's say we have 3 Developers in our company. We have 3 servers (ec2 instances).
+- Each Developer is responsible for deploying their code (patches of application, bugs fixed) to their respective server.
+- DevOps Engineers facilitate this process by implementing CI/CD pipelines, automating deployments, and ensuring that the infrastructure is scalable and reliable.
+
+- Developers will push the code to a shared repository (e.g., Git, GitHub, Bitbucket), and the CI/CD pipeline will automatically deploy  to the appropriate server.
+- This allows for faster development cycles and more reliable deployments.
+- But first DevOps engineer will validate the code, test it and build it (build stage) using softwares like Maven, Jenkins, Gradle etc.. If the build is successful,
+- Entire code will be zipped (artifact) and stored in a repository (e.g. JFrog, Nexus, Artifactory) for deployment. 
+
+- Now DevOps Engineer can deploy the application from the artifact repository to the deployment server using Jenkins, Chef, Puppet, Terraform or Ansible.
+- This process is automated using CI/CD tools like Jenkins, GitLab CI/CD, CircleCI, Travis CI etc. And you can deploy to N number of servers simultaneously.
+
+$ CI CD Pipeline:
+Continuous Integration (CI) and Continuous Deployment (CD) are key practices in DevOps that enable teams to deliver code changes more frequently and reliably. 
+CI involves automatically testing and integrating code changes into a shared repository, while CD focuses on automating the deployment of those changes to production environments.
+
+
+< AWS Code Commit >
+* It is a fully managed source control service that makes it easy for teams to host secure and scalable Git repositories.
+* AWS CodeCommit eliminates the need to operate your own source control system or worry about scaling its infrastructure.
+* It is like a replacement to GitHub or Bitbucket.
+
+* AWS CodeCommit is designed to work seamlessly with other AWS services, making it easy to integrate into your existing workflows.
+* It provides features like automatic scaling, high availability, and built-in security controls to protect your code.
+
+< S3 to store artifacts >
+* Amazon S3 (Simple Storage Service) is a scalable object storage service that is commonly used to store and retrieve artifacts in a CI/CD pipeline.
+* S3 can be used to store build artifacts, such as compiled code, Docker images, and other files generated during the build process.
+* By using S3 to store artifacts, teams can easily manage and version their builds, as well as share them across different stages of the pipeline.
+* It is added benefit to Nexus, JFrog or Artifactory.
+
+`Amazon S3 cannot fully replace Sonatype Nexus Repository, but it can be used as the underlying storage for Nexus.`
+
+< AWS Code Deploy >
+* AWS CodeDeploy is a fully managed deployment service that automates software deployments to a variety of compute services, including Amazon EC2 instances, AWS Fargate, and on-premises servers.
+* It helps teams release new features quickly and reliably by automating the deployment process, reducing the risk of errors, and enabling rollbacks if needed.
+* CodeDeploy integrates with other AWS services, such as AWS CodePipeline, to create a complete CI/CD workflow.
+
+`Cannot fully replace traditional deployment methods, but it provides a more efficient and reliable way to manage deployments in the cloud.`
+
+< AWS Code Build >
+* AWS CodeBuild is a fully managed build service that compiles source code, runs tests, and produces software packages that are ready to deploy.
+* It eliminates the need to provision and manage your own build servers, allowing you to focus on writing code.
+* CodeBuild scales automatically to meet your build volume, so you can build and test your code quickly and efficiently.
+
+`AWS CodeBuild does not replace Maven; rather, it integrates with and leverages Maven as a build tool within its managed build environments.`
+
+< AWS Code Pipeline >
+* AWS CodePipeline is a fully managed continuous integration and continuous delivery (CI/CD) service that helps you automate your release pipelines for fast and reliable application and infrastructure updates.
+* It enables you to model your software release process as a series of stages, including build, test, and deploy.
+* CodePipeline integrates with other AWS services, such as AWS CodeCommit, AWS CodeBuild, and AWS CodeDeploy, to create a complete CI/CD workflow.
+
+`AWS CodePipeline does not replace traditional CI/CD tools; rather, it integrates with and enhances them within the AWS ecosystem.`
+
+THESE SERVICES FORM $AWS_DEVOPS 
+
+$ DevOps Lifecycle
+Development ---> Build ---> Test ---> Deploy ---> Monitor ---> Feedback ---> Optimize ---> Repeat 
