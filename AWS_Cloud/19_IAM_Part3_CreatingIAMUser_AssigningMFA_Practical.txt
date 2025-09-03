@@ -3,8 +3,7 @@
 * Go to the AWS Management Console and navigate to the IAM Dashboard. 
 - Customize IAM user sign-in link by creating an account alias.
 - Bookmark it. 
-
-- Create an IAM user and assign appropriate permissions.
+- Create an IAM user and assign admin permissions.
 
 < IAM Tags >
 Tags help organize and manage IAM resources by adding metadata to them.
@@ -15,4 +14,4 @@ You can use tags to categorize users, groups, roles, and policies based on your 
 For each resource, you can add maximum of 50 tags. 
 
 /Example: you write a script to delete IAM users based on specific tags, you can easily identify and target those users using the tags you've assigned.
-Otherwise, you would have to manually search for users, which can be time-consuming and error-prone."
+Otherwise, you would have to manually search for users, which can be time-consuming and error-prone.
