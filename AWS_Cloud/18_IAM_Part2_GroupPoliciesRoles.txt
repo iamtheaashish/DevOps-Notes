@@ -8,5 +8,46 @@ Two Types of Access in AWS:
 `Keys also have the same permissions like console access.`
 `Every IAM user can have maximum 2 set of keys.`
 `Keys are visible only at the time of creation.`
+`Once keys are lost, they cannot be retrieved. You have to regenerate new keys. You can't get same keys back.`
 
+`Brand new IAM user don't have any permissions by default.`
 
+< IAM Groups >
++ IAM Group is a collection of IAM users. You can create multiple users and add them to a group.
++ IAM Groups help you manage permissions for multiple users at once.
++ You can attach policies to a group, and all users in the group inherit those permissions.
++ This simplifies permission management, especially in large organizations.
++ If a user had some permission from their previous group, they will retain those permissions when added to a new group.
++ Users individual permission will not be affected by group membership changes.
++ If Sweety had EC2, Nimi had R53, Nitin had Redshift and DevOps group was created and SQS permission was given,
++ all users will have their older permissions plus SQS will be given to each one of them.
+* Maximum 10 policies can be attached to a group.
+* Help admins save their time and effort in managing user permissions.
+
+Policies ---> Policy Documents ---> Policy Documents contains permissions. They are written in JSON format.
+
+<Inline Policies> Created and Managed by You/Customer Managed Policies.
+- Inline policies are policies that are embedded directly into a single user, group, or role.
+- They are specific to the entity they are attached to and cannot be reused.
+- Inline policies are useful for granting permissions that are unique to a particular user or group.
+
+<Managed Policies> Created and Managed by AWS.
+- Managed policies are standalone policies that can be attached to multiple users, groups, or roles.
+- They are created and managed separately from the entities they are attached to.
+- Managed policies are reusable and can be versioned, making them easier to manage at scale.
+
+<User Based Policies> Policies that are directly attached to users.
+
+<Resource Level Policies> Policies that are attached to specific resources (e.g., S3 buckets, EC2 instances).
+granular level/deeper customized permissions.
+
+# We can write JSON code by hand or by using a JSON visual editor/validator tool.
+
+We have important concept of < IAM Roles > in AWS.
+- IAM Roles are similar to IAM users, but they are not associated with a specific person or entity.
+- Roles are meant to be assumed by trusted entities, such as AWS services, applications, or users.
+- Roles allow you to delegate access to AWS resources without sharing long-term credentials.
+- When a role is assumed, temporary security credentials are issued, which are valid for a limited time.
+- Roles are commonly used for cross-account access, allowing users in one AWS account to access resources in another account.
+- Roles can also be used to grant permissions to AWS services (e.g., EC2 instances) to access other AWS resources on your behalf.
+Keys are stored on the machine, which is not safe. Instead, use IAM roles to manage access securely.
