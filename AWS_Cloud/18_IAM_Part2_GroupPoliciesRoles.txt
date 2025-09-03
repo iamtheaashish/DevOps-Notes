@@ -51,3 +51,12 @@ We have important concept of < IAM Roles > in AWS.
 - Roles are commonly used for cross-account access, allowing users in one AWS account to access resources in another account.
 - Roles can also be used to grant permissions to AWS services (e.g., EC2 instances) to access other AWS resources on your behalf.
 Keys are stored on the machine, which is not safe. Instead, use IAM roles to manage access securely.
+
+
+$ IAM user signin link. https://<your-account-id>.signin.aws.amazon.com/console
+for example, https://123456789012.signin.aws.amazon.com/console
+but this is hard to remember, so you can create a `custom alias` for your IAM user.
+$ Account Alias helps to remember the IAM user signin link.
+
+
+For IAM best practices, change your security keys in regular intervals.

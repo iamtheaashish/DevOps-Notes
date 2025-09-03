@@ -1,0 +1,18 @@
+# This note is about < Creating IAM Users and Assigning MFA in AWS >. Thanks to Shaik Ashish and Reyaz Sir. 
+
+* Go to the AWS Management Console and navigate to the IAM Dashboard. 
+- Customize IAM user sign-in link by creating an account alias.
+- Bookmark it. 
+
+- Create an IAM user and assign appropriate permissions.
+
+< IAM Tags >
+Tags help organize and manage IAM resources by adding metadata to them.
+You can use tags to categorize users, groups, roles, and policies based on your organization's needs.
+`Tags are Key Value Pair. They are used for identification, automation, cost optimization purpose.`
+`It helps in resource management and cost allocation.`
+
+For each resource, you can add maximum of 50 tags. 
+
+/Example: you write a script to delete IAM users based on specific tags, you can easily identify and target those users using the tags you've assigned.
+Otherwise, you would have to manually search for users, which can be time-consuming and error-prone."
