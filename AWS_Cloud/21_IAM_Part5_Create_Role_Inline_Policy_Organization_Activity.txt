@@ -1,0 +1,8 @@
+# This note is about IAM Roles. Thanks to Reyaz Sir and Shaik Aashish.
+# Roles are temporary access without the credentials. They are used to grant permissions to entities that need to perform actions on AWS resources.
+$ Some AWS services can assume roles to perform actions on your behalf.
+Read AWS documentation for more details on IAM roles.
+
+< Switch Role >
+It is used to switch between different IAM roles in AWS.
+ansible all -m command -a  "useradd ashihs;su - ashish;whoami"It is done to grant users or services the permissions associated with a different role without needing to create separate IAM users.
