@@ -6,3 +6,12 @@ Read AWS documentation for more details on IAM roles.
 < Switch Role >
 It is used to switch between different IAM roles in AWS.
 ansible all -m command -a  "useradd ashihs;su - ashish;whoami"It is done to grant users or services the permissions associated with a different role without needing to create separate IAM users.
+==============================
+< Inline Policy >
+An inline policy is a policy that is embedded directly into a single user, group, or role. 
+Inline policies are used to grant specific permissions to a single entity and are not reusable across multiple entities.
+==============================
+< AWS Organizations >
+AWS Organizations is a service that allows you to manage multiple AWS accounts from a single account.
+It provides a way to organize and govern your accounts, apply policies, and manage billing.
+You can create multiple root accounts within an organization, and each root account can have multiple member accounts.
