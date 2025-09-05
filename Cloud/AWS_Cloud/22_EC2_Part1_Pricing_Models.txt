@@ -1,0 +1,37 @@
+# This note is about EC2 Pricing Models in AWS. Thanks to Reyaz Sir and Shaik Ashish.
+
+"When you launch an EC2 Instance you have it a specific region."
+
+" Elastic Compute Cloud (EC2) is a web service that provides resizable (scale_up scale_down scale_out scale_in) compute capacity in the cloud. 
+It is nothing but a virtual machine or instance in the cloud. It support windows and linux operating systems."
+
+Price = Pay as you go. No upfront cost. No long term commitment.
+- If in morning you need 10 instances and in evening you need only 2 instances, you can scale up and scale down as per your requirement.
+- If you don't need instances at night, you can stop or terminate them to save cost.
+- Pricing in AWS is like your electricity bill. You pay only for what you use.
+
+< There are 5 pricing models in EC2: >
+1. On-Demand Instances --> Pay for compute capacity by the hour or second with no long-term commitments. 
+*                         We would use this pricing model for practice.
+2. Reserved Instances --> Make a one-time payment for a significant discount on the hourly charge for an instance.
+*                         Long term commitment of 1 or 3 years. Pay upfront, partial upfront, or no upfront payment options.
+*                         Almost 75% discount compared to on-demand hourly pricing for standard RIs(not resizable). 
+*                         Convertible(resizable) RIs offer up to 54% discount.
+*                         Scheduled RIs are available at a discount of up to 10%.
+3. Spot Instances --> Bid for unused EC2 capacity at a potentially lower price.
+4. Savings Plans --> Commit to a consistent amount of usage (measured in $/hr) for a 1 or 3-year term in exchange for lower prices.
+5. Dedicated Hosts --> Physical servers dedicated to your use, providing more control over the instance placement and configuration.
+*                      If you have licenses based software which does not support virtualization, you can use dedicated hosts.
+*                      Dedicated is costliest pricing model.
+
+
+
+
+
+
+
+
+
+
+
+
