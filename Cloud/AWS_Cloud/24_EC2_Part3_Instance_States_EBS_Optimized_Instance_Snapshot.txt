@@ -63,6 +63,7 @@ Copy or backup of EBS volume is called Snapshot.
 / You need to create a volume from the snapshot and then attach the volume to the instance.
 * Snapshot doesn't have Availability Zone. It is a regional resource.
 * Snapshot is private by default. You need to modify the permissions to share it with other accounts.
+* To create a snapshot, you need to stop the instance or unmount the volume to ensure data consistency.
 --------------------------------
 
 
