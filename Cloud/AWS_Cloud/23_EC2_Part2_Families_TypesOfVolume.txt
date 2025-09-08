@@ -1,0 +1,106 @@
+# This note is about EC2 families in AWS. Thanks to Reyaz Sir and Shaik Ashish.
+"When you launch an EC2 Instance you have it in a specific region."
+"Each region has multiple Availability Zones."
+"Each Availability Zone has its own set of resources."
+
+< There are 5 main families of EC2 Instances: >
+1. General Purpose --> Balance of compute, memory, and networking resources.
+*                     Examples: t2 nano, t2 micro, t2 small, t2 medium, t2 large, t2 xlarge, t3, m4, m5, a1
+*                     Use Cases: Web servers, code repositories, development environments, small and medium databases.
+2. Memory Instances --> Designed to deliver fast performance for workloads that process large data sets in memory.
+*                     Examples: r4, r5, x1, x1e, z1d
+*                     Use Cases: High performance databases, distributed web scale in-memory caches, in-memory databases, real time big data analytics.
+3. Compute Instances --> Ideal for compute-bound applications that benefit from high-performance processors.
+*                     Examples: c4, c5
+*                     Use Cases: High performance web servers, scientific modeling, dedicated gaming servers, ad serving, batch processing.
+4. Storage Instances --> Designed for workloads that require high, sequential read and write access to very large data sets on local storage.
+*                     Examples: d2, h1, i3
+*                     Use Cases: Distributed file systems, data warehousing applications, high frequency online transaction processing (OLTP) systems, big data analytics (Hadoop/Spark).
+5. GPU Instances --> Designed for applications that require a graphics processing unit (GPU) for graphics-intensive applications and parallel processing.
+*                     Examples: p2, p3, g3
+*                     Use Cases: Machine learning, high performance computing, seismic analysis, molecular modeling, genomics, rendering, video encoding.  
+
+-------------------------------
+Only use t2 micro for AWS Free Tier. 1GiB RAM, 1 vCPU, EBS only.
+-------------------------------
+Scalability can be achieved by changing the instance type. 
+You should STOP the instance first, then change the instance type, then START the instance.
++ Even if you change the instance type, the data in the instance will remain intact.
+-------------------------------
+< Burstable Performance Instances >
+* These instances provide a baseline level of CPU performance with the ability to burst above the baseline.
+* They are ideal for workloads that do not use the full CPU often or consistently, but occasionally need to burst to higher CPU performance when the demand arises.
+* Examples: t2, t3
+* Use Cases: Web servers, developer environments, small databases, micro services.
+* Will give you CPU credits when the instance is idle. You can use these credits to burst when needed.
+* If you use up all your CPU credits, the CPU performance will be throttled to the baseline level.
+* For limited time you can use unlimited mode, where you can burst beyond the baseline even if you run out of credits. You will be charged for the extra CPU usage.
+-------------------------------
+< Volumes can be of 2 types: >
+> Not Persistent
+1. Instance Store Volumes (Ephemeral Storage)
+* These are temporary storage volumes that are physically attached to the host computer.
+* They are ideal for temporary storage of information that changes frequently, such as buffers, caches, scratch data, and other temporary content.
+* Data on an instance store volume persists only during the lifetime of the associated instance. If you stop or terminate the instance, the data in the instance store is lost.
+* Instance store volumes are not backed up to Amazon S3, so you should not use them for data that requires durability.
+* Instance store volumes are included in the cost of the instance, so there is no additional charge for using them.
+* You cannot detach an instance store volume from one instance and attach it to another instance.
+* Not all instance types support instance store volumes. You can check the instance type documentation to see if an instance type supports instance store volumes.
++ They are FREE.
+
+> Persistent
+2. EBS Volumes (Elastic Block Store)
+* These are network-attached storage volumes that can be attached to an EC2 instance.
+* EBS volumes are persistent, meaning the data is retained even after the instance is stopped or terminated.
+* EBS volumes can be backed up to Amazon S3 using snapshots.
+* You can detach an EBS volume from one instance and attach it to another instance.
+* EBS volumes are charged separately from the instance, based on the provisioned size and IOPS.
+* EBS volumes can be resized, and you can change the volume type to optimize for performance or cost.
+* EBS volumes can be encrypted for security.
+* EBS volumes can be of different types: General Purpose SSD (gp2), Provisioned IOPS SSD (io1), Throughput Optimized HDD (st1), Cold HDD (sc1), and Magnetic (standard).
+* You can use EBS volumes as boot volumes or data volumes.
++ Chargable
+-------------------------------
+# IOPS - Input/Output Operations Per Second
+# 1 IOPS = 1 read or write operation
+-------------------------------
+< There are Different types of EBS Volumes: >
+1.General Purpose SSD (gp2) # 1GiB to 16TiB (IOPS not configurable, 3 IOPS per GiB, up to 16,000 IOPS)
+* Balanced price and performance for a wide variety of workloads.
+* Suitable for most applications, including small to medium-sized databases, development and test environments, and boot volumes.
+* Provides a baseline performance of 3 IOPS per GiB, with the ability to burst up to 3,000 IOPS for volumes smaller than 1 TiB.
+2.Provisioned IOPS SSD (io1) # 4GiB to 16TiB (IOPS configurable from 100 to 64,000 IOPS)
+* Designed for I/O-intensive applications that require low latency and high throughput.
+* Suitable for large databases, big data analytics, and other applications that require high performance.
+* Allows you to specify a consistent IOPS rate, up to 64,000 IOPS per volume.
+3.Throughput Optimized HDD (st1) # 500GiB to 16TiB
+* Low-cost magnetic storage designed for frequently accessed, throughput-intensive workloads.
+* Suitable for big data, data warehouses, and log processing.
+* Provides a maximum throughput of 500 MiB/s per volume.
+4.Cold HDD (sc1) # 500GiB to 16TiB
+* Lowest cost magnetic storage designed for less frequently accessed workloads.
+* Suitable for infrequently accessed data, such as backups and archives.
+* Provides a maximum throughput of 250 MiB/s per volume.
+5.Magnetic (standard) # 1GiB to 1TiB (Previous generation, low generation)
+* Previous generation magnetic storage designed for workloads with infrequent access patterns.
+* Suitable for workloads that require low cost storage and are not sensitive to performance variability.
+* Provides a maximum throughput of 90 MiB/s per volume.
+-------------------------------
+"Always use EBS volumes for critical data that needs to be persistent."
+"Instance Store volumes can be used for temporary data that can be recreated if lost."
+-------------------------------
+# Certification Question:
++ Root Volume must be gp2 or io1 or standard.
++ Additional Volumes can be of any type.
+-------------------------------
+If you terminate the instance, the root EBS volume will be deleted by default.
+You can change this behavior by modifying the "Delete on Termination" attribute of the EBS volume.
+Additional EBS volumes will not be deleted by default when the instance is terminated.
+You can change this behavior by modifying the "Delete on Termination" attribute of the EBS volume.
+-------------------------------
+
+
+
+
+
+
