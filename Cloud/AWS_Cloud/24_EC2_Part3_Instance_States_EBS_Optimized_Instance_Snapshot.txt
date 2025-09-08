@@ -1,0 +1,69 @@
+# This note is about EC2 Instance States, EBS Optimized Instances, and Snapshots in AWS. Thanks to Reyaz Sir and Shaik Ashish.
+
+There are 6 EC2 Instance States:
+1. Pending: The instance is being launched.
+2. Running: The instance is running and ready for use.
+3. Stopping: The instance is in the process of stopping.
+4. Stopped: The instance is stopped and can be started again.
+5. Shutting-down: The instance is in the process of terminating.
+6. Terminated: The instance has been terminated and cannot be started again.
+
++ In reboot, state doesn't change. 
++ In stop/start, public IP changes but private IP remains the same. The instance might move to a different host. This happens in the backend, just know it happens.
++ If the instance is connected to EBS volumes, and you stop/start the instance, the data on the EBS volume remains intact(not lost).
+/stop/start ---> INSTANCE JUMP TO NEW HOST ---> DATA ON EBS VOLUME REMAINS INTACT
+
++ If you terminate the instance, the data on the EBS volume is lost unless the "Delete on Termination" option is set to false.
+/terminate ---> INSTANCE TERMINATED ---> DATA ON EBS VOLUME LOST (if "Delete on Termination" is true, which is default)
+
++ If you reboot the instance, the data on the EBS volume remains intact.
+/reboot ---> INSTANCE REBOOTED(instance isn't moving on different host) ---> DATA ON EBS VOLUME REMAINS INTACT   
+
+# Host is the physical server where your instance(s) is/are running.
+--------------------------------
+< Instance Store Volume >
+Instance Store Volumes are temporary storage volumes that are physically attached to the host server. 
+They provide high I/O performance but have the following characteristics:
+
+1. Ephemeral: Data on instance store volumes is lost when the instance is stopped or terminated.
+2. Non-persistent: Unlike EBS volumes, instance store volumes do not persist beyond the lifecycle of the instance.
+3. High performance: Instance store volumes offer low-latency, high-throughput performance for temporary data storage.
+
+Use cases for instance store volumes include:
+
+- Caching: Storing frequently accessed data for quick retrieval.
+- Temporary storage: Holding data that does not need to persist beyond the instance's lifecycle.
+- High-performance applications: Running applications that require fast, local storage.
+--------------------------------
+< EBS Optimized Instance >
+An EBS-optimized instance is a type of EC2 instance that is specifically designed to provide dedicated throughput between the instance and EBS volumes. 
+This optimization helps to ensure that EBS I/O operations do not compete with other network traffic from the instance, resulting in improved performance for EBS-backed applications.           
+
+* Single digit latency (in milliseconds) for EBS I/O operations. 
++ Only few families of iinstances support EBS optimization. Like M4, C4, R3, I2, D2, T2, etc.
++ EBS optimization is not available for all instance types. You need to check the instance type documentation to see if it supports EBS optimization.
++ EBS optimization is not enabled by default for all instance types. You need to enable it when launching the instance.
++ EBS optimization incurs an additional cost. You need to check the pricing details for the instance type to see if there is an additional charge for EBS optimization.
++ EBS optimization provides dedicated bandwidth for EBS I/O operations, which can improve performance for EBS-backed applications.
++ EBS optimization is not required for all workloads. You need to evaluate your application's performance requirements to determine if EBS optimization is necessary.
+--------------------------------
+< Snapshot >
+Copy or backup of EBS volume is called Snapshot.
++ Snapshot is stored in S3. It is AWS managed, you cannot see it in your S3 console.
++ Snapshot can be created from EBS volume only, not from Instance Store Volume.
++ Snapshot is a point-in-time copy of an EBS volume.
++ Snapshot is incremental in nature. This means that only the blocks that have changed since the last snapshot are copied to the new snapshot.
++ This helps to save storage space and reduce the time required to create a snapshot.
++ You can create a snapshot of an EBS volume while the volume is in use. 
++ However, it is recommended to stop the instance or unmount the volume before creating a snapshot to ensure data consistency.
++ You can create a new EBS volume from a snapshot. This allows you to restore data from a snapshot or create multiple volumes from the same snapshot.
++ Snapshots can be shared with other AWS accounts. This allows you to share data between accounts or collaborate on projects.   
+/ You need a minimum of one snapshot to create a new volume from a snapshot.
+/ You cannot attach snapshots to instances directly. 
+/ You need to create a volume from the snapshot and then attach the volume to the instance.
+* Snapshot doesn't have Availability Zone. It is a regional resource.
+* Snapshot is private by default. You need to modify the permissions to share it with other accounts.
+--------------------------------
+
+
+
