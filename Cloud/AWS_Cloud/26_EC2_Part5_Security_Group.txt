@@ -1,6 +1,114 @@
 # This note is about Security Group. Thanks to Reyaz sir and Shaik Ashish.
 
 $ What is Firewall ?
++ A firewall is a network security system that monitors and controls incoming and outgoing network traffic based on predetermined security rules.
++ It acts as a barrier between a trusted internal network and untrusted external networks, such as the internet. Firewalls can be hardware-based, 
++ software-based, or a combination of both, and they are used to protect networks from unauthorized access, attacks, and other security threats.
 
 < Security Groups >
+"It is a virtual firewall that controls the traffic for one or more instances.
+It stops unauthorized access to your instances. It secures the instances in your VPC.
+
+Inside a VPC we have NACL (Network Access Control List) and Security Groups.
+NACL is at the subnet level and Security Group is at the instance level.
+
+Inside NACL we have security rules and inside Security Group we have inbound and outbound rules.
+Security Groups are stateful, meaning if you allow an incoming request from a specific IP address and port, the response is automatically allowed, regardless of outbound rules.
+NACLs are stateless, meaning if you allow an incoming request from a specific IP address and port, you must also create a rule to allow the response to be sent back out."
+
+# Lets say I have an EC2 instance and it runs a web application on port 80 using protocol HTTP.
+# I want to allow the traffic from the internet to access my web application.
+# For that I need to create a security group and add an inbound rule to allow traffic on port 80 using protocol HTTP from source 0.0.0.0/0 (which means from any IP address).
+# By default, all outbound traffic is allowed.
+# So, I don't need to add any outbound rule.
+
+# If you want to allow a Developer to access the instance using SSH, you need to add an inbound rule to allow 
+# traffic on port 22 using protocol SSH from source 0.0.0.0/0 (which means from any IP address).
+
++ You can only allow, rest is denied. 
++ If you haven't allowed, it is denied by default.
+
+$ We have Two Rules in Security Group:
+1. Inbound Rules: It controls the incoming traffic to your instance.
+* By default all inbound traffic is denied.
+* We can only allow the traffic we want. Protocols and ports we want to allow.
+# Is it possible to deny any traffic in inbound rules ? No, we can only allow the traffic we want. Rest is denied by default.
+
+2. Outbound Rules: It controls the outgoing traffic from your instance.
+* By default all outbound traffic is allowed.
+--------------------------------------
+Every EC2 instance must have at least one security group.
+One Security Group can be assigned to multiple instances at same time. 
+Multiple Security Groups can be assigned to single instance at same time.
+AWS also provides a default security group for each VPC. It is called "default".
+In default security group, all inbound traffic is denied and all outbound traffic is allowed.      
+--------------------------------------
+$ What is source and destination in security group rules ?
++ In inbound rules, source is the IP address or CIDR block from which the traffic is allowed to reach the instance.
++ In outbound rules, destination is the IP address or CIDR block to which the traffic is allowed to leave the instance. 
+
+$ We have three types of sources and destinations in security group rules:
+1. Custom IP: We can specify a specific IP address or a range of IP addresses using CIDR(Classless Inter-Domain Routing) notation. 
+* Access is allowed only from that specific IP address or range of IP addresses.
+2. My IP: It automatically detects and adds your current public IP address as the source or destination.
+* Access is allowed only from that specific IP address.
+3. Anywhere: It allows traffic from or to any IP address (0.0.0.0/0).
+--------------------------------------
+< Stateful and Stateless >
+$ What is Stateful ?
++ In stateful, if you allow an incoming request from a specific IP address and port, the response is automatically allowed, regardless of outbound rules.
++ Example: Security Group is stateful.
+
+$ What is Stateless ?
++ In stateless, if you allow an incoming request from a specific IP address and port, you must also create a rule to allow the response to be sent back out.
++ Example: NACL is stateless.
+--------------------------------------
+< NACL - Network Access Control List >
+It is another layer of security for your VPC that acts as a firewall for controlling traffic in and out of one or more subnets.
+It is at the subnet level.
+It has inbound and outbound rules.
+It is stateless.
+Default NACL allows all inbound and outbound traffic.
+# Actually while we create a VPC, a default NACL is created automatically.
+# We have to give IPv4 range while creating a VPC.
+--------------------------------------
+$ Difference between Security Group and NACL:
+1. Security Group is at the instance level.
+   NACL is at the subnet level.
+2. Security Group is stateful.
+   NACL is stateless.
+3. In Security Group, we can only allow the traffic we want. Rest is denied by default.
+   In NACL, we can allow and deny the traffic we want.
+4. Security Group has only inbound and outbound rules.
+   NACL has inbound and outbound rules and also has rule number.
+5. Security Group is applied to instances.
+   NACL is applied to subnets.
+--------------------------------------
+$ Best Practices for Security Groups:
+1. Allow only necessary access (Principle of Least Privilege).
+2. Use clear names and tags for easy identification.
+3. Regularly review and update rules.
+4. Restrict access by trusted IPs or CIDR blocks.
+5. Separate security groups for different roles/applications.
+6. Monitor traffic with CloudTrail and VPC Flow Logs.
+7. Prefer custom security groups over default.
+8. Test rules to avoid blocking legitimate traffic.
+9. Reference security groups for internal communication.
+10. Combine with NACLs/VPNs for layered security.
+--------------------------------------
+$ Requests will hit NACL first and then Security Group.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
