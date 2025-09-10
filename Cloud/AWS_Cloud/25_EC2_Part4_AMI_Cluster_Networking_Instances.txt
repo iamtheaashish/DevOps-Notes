@@ -1,0 +1,88 @@
+# This note is about EC2 Part 4 - AMI, Cluster, Networking, Instances. Thanks to Reyaz Sir and Shaik Ashish
+
+< Amazon Machine Image (AMI) >
++ It is backup of whole EC2 instance. It contains OS, Application, Data everything.
++ We can create AMI from existing EC2 instance.
++ We can launch multiple EC2 instances from same AMI.
++ We can create AMI from stopped instance also.
++ We can create AMI from running instance also but it is not recommended.
++ We can create AMI from terminated instance also but it is not recommended.  
+----------------------------------
++ AMI is stored in S3 bucket but we cannot see it in S3 console.
++ AMI is region specific. We cannot use same AMI in different region.
++ We can copy AMI from one region to another region.
++ We can share AMI with specific AWS account or make it public.
++ AMI can be of two types - EBS backed AMI and Instance Store backed AMI.
+* AWS also provides some pre-defined AMIs like Amazon Linux, Ubuntu, Windows etc.
+* We can also create custom AMI as per our requirement.
++ AMI contains 5 components - Root Volume, Launch Permissions, Block Device Mapping, Kernel ID, RAM Disk ID.
+/ Snapshot is only for EBS. But AMI is for both EBS and Instance.
+----------------------------------
+< Cluster Networking Instances >
++ Cluster = Group of Servers/EC2 instances. --> This group is called Placement Group.
+1. Cluster Placement Group --- Low HA but High Performance
+    + Grouping the servers in `single AZ`.
+    + It provides low latency and high throughput (10Gbps network).
+    + It is used for High Performance Computing (HPC) applications.
+    + It is not recommended for small instances like t2.micro, t3.micro etc.
+    + It is recommended for large instances like m5.large, c5.large etc.
+    + We can launch maximum 7 instances in a cluster placement group.
+    + Usecase = Big Data, Machine Learning, High Performance Computing etc.
+2. Spread Placement Group --- High HA but Low Performance
+    + Grouping the servers across `multiple AZ`.
+    + It provides high availability and fault tolerance.
+    + It is used for critical applications(downtime not accepted).
+    + It is recommended for small instances like t2.micro, t3.micro etc.
+    + It is not recommended for large instances like m5.large, c5.large etc.
+    + We can launch maximum 7 instances per AZ in a spread placement group.
+    + Usecase = Critical applications like banking, finance etc.
+3. Partition Placement Group
+    + Grouping the servers in multiple partitions.
+    + Each partition is isolated from other partitions.
+    + It provides high availability and fault tolerance.
+    + It is used for large distributed applications.
+    + It is recommended for large instances like m5.large, c5.large etc.
+    + It is not recommended for small instances like t2.micro, t3.micro etc.
+    + We can launch maximum 7 instances per partition in a partition placement group.
+    + We can have 100s of EC2 instances in a partition placement group.
+    + Usecase = HDFS, HBase, Kafka, Cassandra etc.
+----------------------------------
+Placement Groups recommend to have homogeneous instance types.
+For example, if we are using m5.large instance in a placement group, then we should
+use only m5.large instances in that placement group. Mixing instance types is not recommended.
+----------------------------------
+You cannot move the EC2 instance from one placement group to another placement group.
+You can add EC2 instance to placement group only during the launch of the instance.
+* You cannot add existing EC2 instance to placement group. * 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
